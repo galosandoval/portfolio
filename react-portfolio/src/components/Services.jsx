@@ -8,19 +8,25 @@ export const Services = () => {
           <a
             target="blank"
             style={{ textDecoration: "none", color: "#fff" }}
-            href="https://github.com/fasttrackd-student-work/spring-assessment-social-media-team-red"
+            href="https://github.com/galosandoval/cooksysfinalFE"
           >
             <div className="card">
               <div className="box">
-                <div className="text">Twitter API</div>
+                <div className="text">Project Manager</div>
                 <p>
-                  Worked together on a team of 4 backend developers to create a
-                  clone of Twitter's API.
+                  Web app designed for users to keep track of the people on
+                  their team, projects their team are working, and a users
+                  profile information.
                 </p>
-                <p>Java || Springboot || Lombok</p>
-                <p>- Implemented 11 endpoints.</p>
-                <p>- Followed Kanban principles to organize responsiblites.</p>
-                <p>- Tested endpoints using Postman.</p>
+                <p>Javascript || React || Styled Components</p>
+                <p>
+                  - Frontend developer of project with a team of 3 other FE
+                  developers and 4 Backend Developers
+                </p>
+                <p>
+                  - Acted as the leader of the FE team and communicated with the
+                  leader of the BE team to discuss any progress or problems
+                </p>
               </div>
             </div>
           </a>
@@ -64,7 +70,7 @@ export const Services = () => {
                 <p>
                   This is a project I did on my own. I really enjoy the UI for
                   slack and I thought it would be good practice to see if I
-                  could recreate it. I turned out great!
+                  could recreate it.
                 </p>
                 <p>React || Material UI || CSS || Redux</p>
                 <p>- Implemented Firebase for the database and deployment.</p>
