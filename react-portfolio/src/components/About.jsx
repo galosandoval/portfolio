@@ -4,6 +4,7 @@ import $ from "jquery";
 import aboutPic from "../assets/pic6.jpeg";
 import resumePic from "../assets/resume.png";
 import "./Components.css";
+
 export const About = () => {
   const handleClick = () => {
     $(".resume-container").toggleClass("show");
