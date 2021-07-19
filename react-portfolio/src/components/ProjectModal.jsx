@@ -3,6 +3,7 @@ import Fade from "@material-ui/core/Fade";
 import Backdrop from "@material-ui/core/Backdrop";
 import { makeStyles } from "@material-ui/core/styles";
 import React, { useState } from "react";
+import ReactPlayer from "react-player"
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -11,15 +12,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    backgroundColor: "#6d6875",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    fontFamily: "'Poppins', sans-serif",
+    color: "#fff"
   },
 }));
 
 export const ProjectModal = (props) => {
-    const classes = useStyles();
+  const classes = useStyles();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -31,8 +33,10 @@ export const ProjectModal = (props) => {
   };
   return (
     <div className="modal">
-        <div className="modal-content" onClick={handleOpen}>{props.data}</div>
-      
+      <div className="modal-content" onClick={handleOpen}>
+        {props.data}
+      </div>
+
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -46,7 +50,10 @@ export const ProjectModal = (props) => {
         }}
       >
         <Fade in={open}>
-        <p>Hello world</p>
+          <div className={classes.paper}>
+            <p>Hello world</p>
+            <ReactPlayer playing={true} loop={true} playbackRate={2} url={props.url} />
+          </div>
         </Fade>
       </Modal>
     </div>
