@@ -585,7 +585,7 @@ section .title::after {
     max-width: 800px;
   }
 
-  .services .serv-content .card {
+  .modal {
     width: calc(50% - 10px);
     margin-bottom: 20px;
   }
@@ -609,7 +609,7 @@ section .title::after {
   .home .home-content a {
     font-size: 20px;
   }
-  .services .serv-content .card {
+  .modal {
     width: 100%;
   }
 }
