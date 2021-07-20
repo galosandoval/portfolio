@@ -1,7 +1,21 @@
 import "./Components.css";
 import { ProjectModal } from "./ProjectModal";
 export const Projects = () => {
-  const project1URL = "https://www.youtube.com/watch?v=Nf-cwwIQqIs"
+  const projectURLs = [
+    {
+      gitHubURL: "https://github.com/galosandoval/cooksysfinalFE",
+      youtubeURL: "https://www.youtube.com/watch?v=Nf-cwwIQqIs",
+      deployedURL: "https://cooksysfinal.vercel.app/",
+    },
+    {
+      gitHubURL: "https://github.com/galosandoval/human-rights-first-fe-e",
+    },
+    {
+      gitHubURL: "https://github.com/galosandoval/slack-app",
+      youtubeURL: null,
+      deployedURL: "https://slack-clone-57afa.web.app/",
+    },
+  ];
   const project1 = (
     <div className="card">
       <div className="box">
@@ -63,9 +77,18 @@ export const Projects = () => {
       <div className="max-width">
         <h2 className="title">Portfolio</h2>
         <div className="serv-content">
-          <ProjectModal url={project1URL} data={project1} />
-          <ProjectModal data={project2} />
-          <ProjectModal data={project3} />
+          <ProjectModal
+            deployed={projectURLs[0]?.deployedURL}
+            github={projectURLs[0]?.gitHubURL}
+            url={projectURLs[0]?.youtubeURL}
+            data={project1}
+          />
+          <ProjectModal github={projectURLs[1]?.gitHubURL} data={project2} />
+          <ProjectModal
+            deployed={projectURLs[2]?.deployedURL}
+            github={projectURLs[2]?.gitHubURL}
+            data={project3}
+          />
         </div>
       </div>
     </section>
