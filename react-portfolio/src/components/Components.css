@@ -189,6 +189,7 @@ html {
   border: 2px solid #b5838d;
   transition: all 0.3s ease;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 .about .about-content .right .about-btn:hover,
 .about .max-width .about-content .right .show a:hover {
