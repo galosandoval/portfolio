@@ -31,7 +31,7 @@ html {
 }
 
 .navbar .logo a {
-  text-shadow: #6D6875 1px 1px 2.5px;
+  text-shadow: #6d6875 1px 1px 2.5px;
   color: #fff;
   font-size: 35px;
   font-weight: 600;
@@ -50,7 +50,7 @@ html {
 .navbar .menu li a {
   display: block;
   color: #fff;
-  text-shadow: #6D6875 1px 1px 2.5px;
+  text-shadow: #6d6875 1px 1px 2.5px;
   font-size: 18px;
   font-weight: 500;
   margin-left: 25px;
@@ -70,11 +70,10 @@ html {
   fill: #fff;
   cursor: pointer;
   display: none;
-  
 }
 
 .social svg {
-  -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
+  -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
   transform: translateY(18%);
 }
 
@@ -89,7 +88,7 @@ html {
   background: url("../assets/pic2.jpeg") no-repeat top;
   height: 100vh;
   color: #fff;
-  text-shadow: #6D6875 1px 1px 2.5px;
+  text-shadow: #6d6875 1px 1px 2.5px;
   min-height: 500px;
   font-family: "Ubuntu", sans-serif;
 }
@@ -138,7 +137,6 @@ html {
   background: none;
 }
 
-
 /* .text-5 {
   text-shadow: none;
 } */
@@ -178,7 +176,8 @@ html {
   margin-bottom: 15px;
 }
 
-.about .about-content .right .about-btn, .about .max-width .about-content .right .show a {
+.about .about-content .right .about-btn,
+.about .max-width .about-content .right .show a {
   display: inline-block;
   background: #b5838d;
   color: #fff;
@@ -191,7 +190,8 @@ html {
   transition: all 0.3s ease;
   cursor: pointer;
 }
-.about .about-content .right .about-btn:hover, .about .max-width .about-content .right .show a:hover {
+.about .about-content .right .about-btn:hover,
+.about .max-width .about-content .right .show a:hover {
   color: #b5838d;
   background: none;
 }
@@ -202,7 +202,7 @@ html {
   width: 100%;
   left: -200%;
   top: 0;
-  background: rgba(17, 17, 17, .5);
+  background: rgba(17, 17, 17, 0.5);
   padding-top: 40px;
   transition: all 0.5s ease;
   display: flex;
@@ -278,7 +278,7 @@ section .title::after {
 
 .services {
   color: #fff;
-  background: #6D6875;
+  background: #6d6875;
 }
 
 .services .max-width .title {
@@ -289,12 +289,17 @@ section .title::after {
   background: white;
 }
 .services .title::after {
-  background: #6D6875;
+  background: #6d6875;
   content: "work";
 }
 
-.services .serv-content a {
+.serv-content {
+  display: flex;
+}
+.modal {
   width: calc(33% - 20px);
+}
+.modal-content {
   background: #827b8b;
   text-align: center;
   border-radius: 6px;
@@ -303,7 +308,7 @@ section .title::after {
   transition: all 0.3s ease;
 }
 
-.services .serv-content a:hover {
+.modal-content:hover {
   background: #b5838d;
 }
 
@@ -580,7 +585,7 @@ section .title::after {
     max-width: 800px;
   }
 
-  .services .serv-content .card {
+  .modal {
     width: calc(50% - 10px);
     margin-bottom: 20px;
   }
@@ -604,10 +609,17 @@ section .title::after {
   .home .home-content a {
     font-size: 20px;
   }
-  .services .serv-content .card {
+  .modal {
     width: 100%;
   }
 }
+
+@media (max-height: 600px) {
+  .home {
+    background: url("../assets/pic2.jpeg") center -200px;
+  }
+}
+
 @media (max-width: 500px) {
   .max-width {
     padding: 0 23px;
@@ -617,13 +629,5 @@ section .title::after {
   }
   .home .home-content .text-3 {
     font-size: 32px;
-  }
-}
-
-@media (max-height: 600px){
-  .home {
-
-    background: url("../assets/pic2.jpeg") center -200px;
-
   }
 }
