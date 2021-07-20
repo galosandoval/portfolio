@@ -112,7 +112,6 @@ export const ProjectModal = (props) => {
                 </Link>
               ) : null}
             </div>
-            {/* {props.deployed ? props.deployed : null} */}
           </div>
         </Fade>
       </Modal>

@@ -1,18 +1,20 @@
 import { init } from "ityped";
-import { useEffect } from "react";
-import $ from "jquery";
+import React, { useEffect } from "react";
 import aboutPic from "../assets/pic6.jpeg";
-import resumePic from "../assets/resume.png";
 import "./Components.css";
 
 export const About = () => {
-  const handleClick = () => {
-    $(".resume-container").toggleClass("show");
-  };
-
   useEffect(() => {
     const typedWords = document.querySelector(".text-4");
-    init(typedWords, { strings: ["Web Developer.", "Los Angelean.", "Coffee nerd.", "Golfer.", "Rock climber."] });
+    init(typedWords, {
+      strings: [
+        "Web Developer.",
+        "Los Angelean.",
+        "Coffee nerd.",
+        "Golfer.",
+        "Rock climber.",
+      ],
+    });
   }, []);
 
   return (
@@ -70,18 +72,13 @@ export const About = () => {
               favorite friends and work on something that is challenging and
               rewarding.
             </p>
-            <div onClick={handleClick} className="about-btn">
+            <a
+              target="blank"
+              className="about-btn"
+              href="https://docs.google.com/document/d/1oWIqe0xZAjrVPe06YduN7kZXM7OeGlU-7WkANZuCJj0/edit?usp=sharing"
+            >
               Resume
-            </div>
-            <div onClick={handleClick} className="resume-container">
-              <img className="resume" src={resumePic} alt="my resume" />
-              <a
-                target="blank"
-                href="https://docs.google.com/document/d/1oWIqe0xZAjrVPe06YduN7kZXM7OeGlU-7WkANZuCJj0/edit?usp=sharing"
-              >
-                Link
-              </a>
-            </div>
+            </a>
           </div>
         </div>
       </div>
