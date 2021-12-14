@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components/macro";
 
 export const GlobalStyle = createGlobalStyle`
   /*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
@@ -38,4 +38,15 @@ table {
 textarea {
   white-space: revert;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
+    font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
+    transition: all 0.50s linear;
+  }
 `;
