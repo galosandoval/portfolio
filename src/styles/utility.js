@@ -1,14 +1,21 @@
 import { css } from "styled-components/macro";
-import { colorDark, colorLight, colorWhite } from "./variables";
 
 /**
  * General
  */
 export const gap = css`
-  gap: ${(p) => (p.gap ? `${p.gap}` : "1rem")};
+  gap: ${(p) => (p.gap ? `${p.gap}rem` : "1rem")};
 `;
 export const flex = css`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  ${gap}
+`;
+export const flexCenter = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   ${gap}
 `;
 export const grid = css`
@@ -49,22 +56,22 @@ export const flow = css`
 /**
  * Color Classes
  */
-export const bgDark = css`
-  background-color: hsl(${colorDark});
+export const bgPrimary = css`
+  background-color: hsl(var(--color-primary));
 `;
-export const bgAccent = css`
-  background-color: hsl(${colorLight});
-`;
-export const bgWhite = css`
-  background-color: hsl(${colorWhite});
-`;
+// export const bgAccent = css`
+//   background-color: hsl(${colorLight});
+// `;
+// export const bgWhite = css`
+//   background-color: hsl(${colorWhite});
+// `;
 
 export const textDark = css`
-  color: hsl(${colorDark});
+  color: hsl(var(--color-primary));
 `;
-export const textAccent = css`
-  color: hsl(${colorLight});
-`;
-export const textWhite = css`
-  color: hsl(${colorWhite});
-`;
+// export const textAccent = css`
+//   color: hsl(${colorLight});
+// `;
+// export const textWhite = css`
+//   color: hsl(${colorWhite});
+// `;

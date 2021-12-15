@@ -1,6 +1,7 @@
 import React from "react";
+import styled from "styled-components/macro";
 import { ThemeProvider } from "styled-components";
-import AppStyles from "./App.styles";
+
 import Landing from "./Landing/Landing";
 import Navbar from "./Navigation/Navbar";
 import Projects from "./Projects/Projects";
@@ -8,6 +9,14 @@ import Skills from "./Skills/Skills";
 import { darkTheme, lightTheme } from "../styles/Themes";
 import { GlobalStyle } from "../styles/GlobalStyles";
 import { useDarkMode } from "../utils/useDarkMode";
+import { GlobalVariables } from "../styles/GlobalVariables";
+
+import { flexCenter } from "../styles/utility";
+
+const AppStyles = styled.div`
+  ${flexCenter}
+  flex-direction: column;
+`;
 
 function App() {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -18,6 +27,7 @@ function App() {
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
+      <GlobalVariables />
       <AppStyles>
         <Landing />
         <Navbar theme={theme} themeToggler={themeToggler} />

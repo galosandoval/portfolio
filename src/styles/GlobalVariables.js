@@ -4,7 +4,12 @@ export const GlobalVariables = createGlobalStyle`
   :root {
     /* colors */
     --color-primary: 354 16% 23%;
+    --color-primary-light: 354 71% 97%;
     --color-secondary: 358 79% 57%;
+    --color-secondary-light: 353 80% 45%;
+    --color-tertiary: 4 52% 58%;
+    --color-tertiary-light: 0 100% 39%;
+
     --color-background: 0 0% 21%;
     --color-dark: 230 35% 7%;
     --color-light: 231 77% 90%;
@@ -42,10 +47,20 @@ export const GlobalVariables = createGlobalStyle`
 }
 
 `;
+export const colorPrimary = "354 16% 23%";
+export const colorPrimaryLight = "354 71% 97%";
+export const colorSecondary = "358 79% 57%";
+export const colorSecondaryLight = "353 80% 45%";
+export const colorTertiary = "4 52% 58%";
+export const colorTertiaryLight = "0 100% 39%";
+
 export const colorDark = "230 35% 7%";
 export const colorLight = "231 77% 90%";
 export const colorWhite = " 0 0% 100%";
 export const colorBackground = "0 0% 21%";
+
+export const colorFontPink = "4 21% 74%";
+export const colorFontGrey = "0 0% 77%";
 
 /**
  * Font Families
