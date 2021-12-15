@@ -39,11 +39,21 @@ table {
 textarea {
   white-space: revert;
 }
+/* Reset buttons */
+button {
+  background-color: transparent;
+  color: inherit;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
+}
 
 body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     ${ffRoboto}
     transition: all 0.50s linear;
+    font-weight: 400;
+    line-height: 1.3;
   }
 `;
