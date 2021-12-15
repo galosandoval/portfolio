@@ -4,7 +4,11 @@ export const GlobalVariables = createGlobalStyle`
   :root {
     /* colors */
     --color-primary: 354 16% 23%;
+    --color-primary-2: 354 16% 25%;
+    --color-primary-3: 354 16% 20%;
     --color-primary-light: 354 71% 97%;
+    --color-primary-light-2: 354 71% 100%;
+    --color-primary-light-3: 354 71% 93%;
     --color-secondary: 358 79% 57%;
     --color-secondary-light: 353 80% 45%;
     --color-tertiary: 4 52% 58%;
@@ -48,11 +52,17 @@ export const GlobalVariables = createGlobalStyle`
 
 `;
 export const colorPrimary = "354 16% 23%";
+export const colorPrimary2 = "354 16% 25%";
+export const colorPrimary3 = "354 16% 20%";
 export const colorPrimaryLight = "354 71% 97%";
+export const colorPrimaryLight2 = "354 71% 99%";
+export const colorPrimaryLight3 = "354 71% 94%";
 export const colorSecondary = "358 79% 57%";
 export const colorSecondaryLight = "353 80% 45%";
 export const colorTertiary = "4 52% 58%";
 export const colorTertiaryLight = "0 100% 39%";
+export const colorBackgroundFont = "198 4% 55%";
+export const colorBackgroundFontLight = "203 5% 66%";
 
 export const colorDark = "230 35% 7%";
 export const colorLight = "231 77% 90%";

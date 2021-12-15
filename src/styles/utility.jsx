@@ -1,4 +1,4 @@
-import { css } from "styled-components/macro";
+import styled, { css } from "styled-components/macro";
 
 /**
  * General
@@ -17,6 +17,9 @@ export const flexCenter = css`
   justify-content: center;
   align-items: center;
   ${gap}
+`;
+export const Center = styled.div`
+  ${flexCenter}
 `;
 export const grid = css`
   display: grid;

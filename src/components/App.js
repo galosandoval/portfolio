@@ -7,11 +7,11 @@ import Navbar from "./Navigation/Navbar";
 import Projects from "./Projects/Projects";
 import Skills from "./Skills/Skills";
 import { darkTheme, lightTheme } from "../styles/Themes";
-import { GlobalStyle } from "../styles/GlobalStyles";
+import { GlobalStyle } from "../styles/globalStyles";
 import { useDarkMode } from "../utils/useDarkMode";
 import { GlobalVariables } from "../styles/GlobalVariables";
-
 import { flexCenter } from "../styles/utility";
+
 
 const AppStyles = styled.div`
   ${flexCenter}
