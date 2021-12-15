@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components/macro";
+import { ffRoboto } from "./typography";
 
 export const GlobalStyle = createGlobalStyle`
   /*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
@@ -39,14 +40,10 @@ textarea {
   white-space: revert;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
+    ${ffRoboto}
     transition: all 0.50s linear;
   }
 `;

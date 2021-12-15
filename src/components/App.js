@@ -7,21 +7,20 @@ import Projects from "./Projects/Projects";
 import Skills from "./Skills/Skills";
 import { darkTheme, lightTheme } from "../styles/Themes";
 import { GlobalStyle } from "../styles/GlobalStyles";
-import Toggle from "../utils/Toggler";
 import { useDarkMode } from "../utils/useDarkMode";
 
 function App() {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
-
   const themeMode = theme === "light" ? lightTheme : darkTheme;
+
   if (!mountedComponent) return <div />;
+
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
       <AppStyles>
-        <Toggle theme={theme} toggleTheme={themeToggler} />
-        <Navbar />
         <Landing />
+        <Navbar theme={theme} themeToggler={themeToggler} />
         <Projects />
         <Skills />
       </AppStyles>

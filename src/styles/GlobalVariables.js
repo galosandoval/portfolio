@@ -3,10 +3,16 @@ import { createGlobalStyle } from "styled-components/macro";
 export const GlobalVariables = createGlobalStyle`
   :root {
     /* colors */
-    --clr-dark: 230 35% 7%;
-    --clr-light: 231 77% 90%;
-    --clr-white: 0 0% 100%;
+    --color-primary: 354 16% 23%;
+    --color-secondary: 358 79% 57%;
+    --color-background: 0 0% 21%;
+    --color-dark: 230 35% 7%;
+    --color-light: 231 77% 90%;
+    --color-white: 0 0% 100%;
     
+    --color-font-pink: 4 21% 74%;
+    --color-font-grey: 0 0% 77%;
+
     /* font-sizes */
     --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
     --fs-800: 3.5rem;
@@ -39,6 +45,7 @@ export const GlobalVariables = createGlobalStyle`
 export const colorDark = "230 35% 7%";
 export const colorLight = "231 77% 90%";
 export const colorWhite = " 0 0% 100%";
+export const colorBackground = "0 0% 21%";
 
 /**
  * Font Families
