@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
-export const AppStyles = styled.div`
+const AppStyles = styled.div`
   display: flex;
-  
 `;
+
+export default AppStyles;
