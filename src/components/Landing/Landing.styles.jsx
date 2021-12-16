@@ -70,10 +70,12 @@ export const ContainerButton = styled.a.attrs(() => ({
   cursor: pointer;
   scroll-behavior: smooth;
 
+  box-shadow: 6px 6px 10px ${({ theme }) => theme.primary3},
+    -6px -4px 10px ${({ theme }) => theme.primary2};
+  color: ${({ theme }) => theme.title};
   &:hover {
-    box-shadow: 6px 6px 10px ${({ theme }) => theme.primary3},
-      -6px -4px 10px ${({ theme }) => theme.primary2};
-    color: ${({ theme }) => theme.title};
+    background-color: hsl(var(--color-font-pink));
+    color: hsl(var(--color-primary));
   }
 `;
 

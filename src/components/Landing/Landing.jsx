@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { GreyFont, LandingStyles, RedContainer, Title } from "./Landing.styles.jsx";
 import LandingCarousel from "./LandingCarousel.jsx";
 
+const CAROUSEL_TIMER = 3000;
+
 const Landing = () => {
   const [translateX, setTranslateX] = useState(0);
   const [isOn, setIsOn] = useState(true);
@@ -35,7 +37,7 @@ const Landing = () => {
       setTimeout(() => {
         setTranslateX((state) => state + 100);
         setIsOn(true);
-      }, 3000);
+      }, CAROUSEL_TIMER);
     }
   }, [isOn, count]);
 

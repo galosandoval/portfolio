@@ -1,5 +1,5 @@
 import React from "react";
-import { githubSVG, linkedInSVG } from "../../styles/svgs";
+import { contactSVG, githubSVG, linkedInSVG } from "../../styles/svgs.jsx";
 import Toggle from "../../utils/Toggler";
 import { NavbarStyles, NavA } from "./Navbar.styles.jsx";
 
@@ -7,13 +7,16 @@ const Navbar = ({ theme, themeToggler }) => {
   return (
     <NavbarStyles>
       <li>
-        <NavA href="#about">About Me</NavA>
+        <NavA href="#about">Me</NavA>
       </li>
       <li>
         <NavA href="#projects">Projects</NavA>
       </li>
       <li>
         <NavA href="#skills">Skills</NavA>
+      </li>
+      <li>
+        <NavA href="#contact">{contactSVG }</NavA>
       </li>
       <li>
         <NavA href="https://github.com/galosandoval">{githubSVG}</NavA>

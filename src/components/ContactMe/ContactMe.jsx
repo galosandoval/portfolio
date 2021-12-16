@@ -1,5 +1,5 @@
 import React from "react";
-import ContactMeStyles from "./ContactMe.styles";
+import ContactMeStyles from "./ContactMe.styles.jsx";
 
 const ContactMe = () => {
   return <ContactMeStyles>Contact Me</ContactMeStyles>;
