@@ -5,6 +5,7 @@ export const NavbarStyles = styled.ul`
   justify-content: space-between;
   align-items: center;
   width: 88%;
+  height: 100vh;
 `;
 
 export const NavA = styled.a.attrs((props) => ({
@@ -13,5 +14,10 @@ export const NavA = styled.a.attrs((props) => ({
 }))`
   background-color: ${({ theme }) => theme.primary};
   cursor: pointer;
-  color: wheat;
+  color: hsl(--var(--color-font-pink));
+
+  > svg {
+    height: 2rem;
+    width: 2rem;
+  }
 `;
