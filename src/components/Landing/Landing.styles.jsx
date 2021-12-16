@@ -58,13 +58,17 @@ export const GreyFont = styled.p`
   font-weight: 600;
 `;
 
-export const ContainerButton = styled.button`
+export const ContainerButton = styled.a.attrs(() => ({
+  href: "#projects"
+}))`
   width: 5rem;
   height: 3rem;
   border-radius: 5px;
   ${flexCenter}
   transition: .3s all ease-in;
   padding: 1.5rem 5.5rem;
+  cursor: pointer;
+  scroll-behavior: smooth;
 
   &:hover {
     box-shadow: 6px 6px 10px ${({ theme }) => theme.primary3},

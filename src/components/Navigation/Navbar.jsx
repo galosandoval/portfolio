@@ -1,14 +1,26 @@
 import React from "react";
+import { githubSVG, linkedInSVG } from "../../styles/svgs";
 import Toggle from "../../utils/Toggler";
-import NavbarStyles from "./Navbar.styles";
+import { NavbarStyles, NavA } from "./Navbar.styles.jsx";
 
 const Navbar = ({ theme, themeToggler }) => {
   return (
     <NavbarStyles>
-      <li>About Me</li>
-      <li>Projects</li>
-      <li>Skills</li>
-      
+      <li>
+        <NavA href="#about">About Me</NavA>
+      </li>
+      <li>
+        <NavA href="#projects">Projects</NavA>
+      </li>
+      <li>
+        <NavA href="#skills">Skills</NavA>
+      </li>
+      <li>
+        <NavA href="https://github.com/galosandoval">{githubSVG}</NavA>
+      </li>
+      <li>
+        <NavA href="https://www.linkedin.com/in/galo-sandoval/">{linkedInSVG}</NavA>
+      </li>
       <li>
         <Toggle theme={theme} toggleTheme={themeToggler} />
       </li>

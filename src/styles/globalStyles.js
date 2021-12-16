@@ -48,6 +48,10 @@ button {
   cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
