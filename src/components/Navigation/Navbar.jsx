@@ -6,7 +6,7 @@ import {
   linkedInSVG,
   projectsSVG,
   stackSVG
-} from "../../styles/svgs.jsx";
+} from "../../assets/svgs.jsx";
 import Toggle from "../../utils/Toggler";
 import { NavbarStyles, NavA, Item } from "./Navbar.styles.jsx";
 

@@ -2,7 +2,6 @@ import {
   colorBackground,
   colorBackgroundFont,
   colorBackgroundFontLight,
-  colorFontGrey,
   colorFontPink,
   colorPrimary,
   colorPrimary2,
@@ -19,7 +18,7 @@ import {
 
 export const lightTheme = {
   body: `hsl(${colorWhite})`,
-  text: `hsl(${colorFontGrey})`,
+  text: `hsl(${colorBackgroundFontLight})`,
   primary: `hsl(${colorPrimaryLight})`,
   primary2: `hsl(${colorPrimaryLight2})`,
   primary3: `hsl(${colorPrimaryLight3})`,

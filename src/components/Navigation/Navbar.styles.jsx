@@ -14,10 +14,11 @@ export const Item = styled.li`
   ${flexCenter}
 
   span {
-    transition: all ease-out 0.3s;
+    transition: all ease-in-out 0.7s;
     position: absolute;
     z-index: -1;
     opacity: 0;
+    transform: translateY(0);
   }
 
   &:hover > span {
@@ -34,7 +35,7 @@ export const NavA = styled.a.attrs((props) => ({
   color: ${({ theme }) => theme.text};
   padding: 2rem;
   border-radius: 50%;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease;
   ${flexCenter}
   background-color: ${({ theme }) => theme.body};
 
