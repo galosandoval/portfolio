@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const NavbarStyles = styled.ul`
   display: flex;
@@ -13,4 +13,5 @@ export const NavA = styled.a.attrs((props) => ({
 }))`
   background-color: ${({ theme }) => theme.primary};
   cursor: pointer;
+  color: wheat;
 `;
