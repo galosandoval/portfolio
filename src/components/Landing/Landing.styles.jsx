@@ -68,14 +68,14 @@ export const ContainerButton = styled.a.attrs(() => ({
   transition: .3s all ease-in;
   padding: 1.5rem 5.5rem;
   cursor: pointer;
-  scroll-behavior: smooth;
-
   box-shadow: 6px 6px 10px ${({ theme }) => theme.primary3},
     -6px -4px 10px ${({ theme }) => theme.primary2};
   color: ${({ theme }) => theme.title};
+  margin-left: 1rem;
+
   &:hover {
-    background-color: hsl(var(--color-font-pink));
-    color: hsl(var(--color-primary));
+    background-color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.primary};
   }
 `;
 
