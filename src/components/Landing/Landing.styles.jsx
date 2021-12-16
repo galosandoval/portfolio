@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { Container } from "../../styles/shared";
 import { Center, flexCenter } from "../../styles/utility";
 
 export const LandingStyles = styled.div`
@@ -18,21 +19,18 @@ export const Title = styled.h1`
   font-size: 1.4rem;
 `;
 
-export const RedContainer = styled.div`
-  width: 100%;
-  background-color: ${({ theme }) => theme.primary};
+export const RedContainer = styled(Container)`
   font-size: 0.7rem;
   font-weight: 600;
-  border-radius: 5px;
-  display: flex;
   overflow: hidden;
+  height: 5rem;
 `;
 
 export const LandingCarouselStyles = styled.div`
   flex: 0 0 100%;
   padding: 0.3rem 0.5rem;
-  transform: ${(p) => `translateX(-${p.translateX}%)`};
-  transition: all 0.8s ease;
+  transform: ${(p) => `translateY(-${p.translateX}%)`};
+  transition: all 1s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,14 +66,14 @@ export const ContainerButton = styled.a.attrs(() => ({
   transition: .3s all ease-in;
   padding: 1.5rem 5.5rem;
   cursor: pointer;
-  scroll-behavior: smooth;
-
   box-shadow: 6px 6px 10px ${({ theme }) => theme.primary3},
     -6px -4px 10px ${({ theme }) => theme.primary2};
   color: ${({ theme }) => theme.title};
+  margin-left: 1rem;
+
   &:hover {
-    background-color: hsl(var(--color-font-pink));
-    color: hsl(var(--color-primary));
+    background-color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.primary};
   }
 `;
 

@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { flexCenter } from "../../styles/utility";
 
 export const NavbarStyles = styled.ul`
   display: flex;
@@ -8,16 +9,37 @@ export const NavbarStyles = styled.ul`
   height: 100vh;
 `;
 
+export const Item = styled.li`
+  position: relative;
+  ${flexCenter}
+
+  span {
+    transition: all ease-in-out 0.7s;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  &:hover > span {
+    transform: translateY(-330%);
+    opacity: 1;
+  }
+`;
+
 export const NavA = styled.a.attrs((props) => ({
   href: props.href,
   target: "_blank"
 }))`
-  background-color: ${({ theme }) => theme.primary};
   cursor: pointer;
-  color: hsl(--var(--color-font-pink));
+  color: ${({ theme }) => theme.text};
+  padding: 2rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  ${flexCenter}
+  background-color: ${({ theme }) => theme.body};
 
-  > svg {
-    height: 2rem;
-    width: 2rem;
+  &:hover {
+    background-color: ${({ theme }) => theme.primary};
   }
 `;

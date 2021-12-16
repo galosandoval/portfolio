@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import AboutMe from "../AboutMe/AboutMe.jsx";
 import { GreyFont, LandingStyles, RedContainer, Title } from "./Landing.styles.jsx";
 import LandingCarousel from "./LandingCarousel.jsx";
 
@@ -8,6 +9,7 @@ const Landing = () => {
   const [translateX, setTranslateX] = useState(0);
   const [isOn, setIsOn] = useState(true);
   const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   const carouselContent = [
     {
@@ -33,10 +35,10 @@ const Landing = () => {
     setIsOn(false);
     if (isOn && count < 2) {
       setCount((state) => state + 1);
-      console.log(count);
       setTimeout(() => {
         setTranslateX((state) => state + 100);
         setIsOn(true);
+        if (count === 1) setIsVisible(true);
       }, CAROUSEL_TIMER);
     }
   }, [isOn, count]);
@@ -50,6 +52,7 @@ const Landing = () => {
         ))}
       </RedContainer>
       <GreyFont>This error occurred during the build time and cannot be dismissed.</GreyFont>
+      <AboutMe isVisible={isVisible} />
     </LandingStyles>
   );
 };

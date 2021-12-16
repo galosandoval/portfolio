@@ -4,7 +4,7 @@ import styled, { css } from "styled-components/macro";
  * General
  */
 export const gap = css`
-  gap: ${(p) => (p.gap ? `${p.gap}rem` : "1rem")};
+  gap: ${(p) => (p.gap ? `${p.gap}rem` : "0")};
 `;
 export const flex = css`
   display: flex;
