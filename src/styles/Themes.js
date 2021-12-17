@@ -13,18 +13,17 @@ import {
   colorSecondaryLight,
   colorTertiary,
   colorTertiaryLight,
+  colorTitle,
   colorWhite
 } from "./GlobalVariables";
 
 export const lightTheme = {
   body: `hsl(${colorWhite})`,
-  text: `hsl(${colorBackgroundFontLight})`,
-  primary: `hsl(${colorPrimaryLight})`,
+  text: `hsl(${colorBackgroundFont})`, // spanish gray
+  primary: `hsl(${colorPrimaryLight})`, // silver pink
   primary2: `hsl(${colorPrimaryLight2})`,
   primary3: `hsl(${colorPrimaryLight3})`,
-  title: `hsl(${colorSecondaryLight})`,
-  tertiary: `hsl(${colorTertiaryLight})`,
-  backgroundFont: `hsl(${colorBackgroundFontLight})`
+  title: `hsl(${colorTitle})`, // saffron
 };
 export const darkTheme = {
   body: `hsl(${colorBackground})`,
@@ -33,6 +32,4 @@ export const darkTheme = {
   primary2: `hsl(${colorPrimary2})`,
   primary3: `hsl(${colorPrimary3})`,
   title: `hsl(${colorSecondary})`,
-  tertiary: `hsl(${colorTertiary})`,
-  backgroundFont: `hsl(${colorBackgroundFont})`
 };

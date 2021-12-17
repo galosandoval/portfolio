@@ -1,12 +1,11 @@
 import React from "react";
 import { AboutButton, AboutMeStyles, Content, RedAbout } from "./AboutMe.styles";
-import profilePic from "../../assets/profile.jpg";
-import { AccentFont, Title } from "../Landing/Landing.styles";
+import profilePic from "../../assets/mepng.png";
+import { AccentFont } from "../../styles/shared";
 
-const AboutMe = ({ isVisible }) => {
+const AboutMe = () => {
   return (
-    <AboutMeStyles isVisible={isVisible}>
-      <Title>Me</Title>
+    <AboutMeStyles>
       <RedAbout>
         <img src={profilePic} alt="My Mugshot" />
         <Content>

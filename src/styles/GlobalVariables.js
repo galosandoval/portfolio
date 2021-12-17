@@ -64,6 +64,8 @@ export const colorTertiaryLight = "0 100% 39%";
 export const colorBackgroundFont = "198 4% 55%";
 export const colorBackgroundFontLight = "203 5% 66%";
 
+export const colorTitle = "47, 81%, 56%";
+
 export const colorDark = "230 35% 7%";
 export const colorLight = "231 77% 90%";
 export const colorWhite = " 0 0% 100%";
@@ -71,7 +73,6 @@ export const colorBackground = "0 0% 21%";
 
 export const colorFontPink = "4 21% 74%";
 export const colorFontGrey = "0 0% 77%";
-
 /**
  * Font Families
  */

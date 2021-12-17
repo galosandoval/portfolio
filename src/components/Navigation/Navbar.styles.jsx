@@ -6,7 +6,8 @@ export const NavbarStyles = styled.ul`
   justify-content: space-between;
   align-items: center;
   width: 88%;
-  height: 100vh;
+  margin-top: 1rem;
+  /* height: 100vh; */
 `;
 
 export const Item = styled.li`
@@ -14,7 +15,7 @@ export const Item = styled.li`
   ${flexCenter}
 
   span {
-    transition: all ease-in-out 0.7s;
+    transition: all ease-out 0.5s;
     position: absolute;
     z-index: -1;
     opacity: 0;
@@ -22,7 +23,7 @@ export const Item = styled.li`
   }
 
   &:hover > span {
-    transform: translateY(-330%);
+    transform: translateY(330%);
     opacity: 1;
   }
 `;
