@@ -15,6 +15,7 @@ export const ProjectContainer = styled(Container)`
 
 export const ProjectContent = styled.div`
   display: flex;
+  flex-direction: ${(p) => (p.reverse ? "row-reverse" : "row")};
 `;
 
 export const Stack = styled.div`

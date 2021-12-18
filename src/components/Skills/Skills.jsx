@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { SkillsStyles, Stack, Info, StackContainer, Slice, Tech } from "./Skills.styles.jsx";
+import { cssSVG, htmlSVG, JavascriptSVG, reactSVG, sassSVG } from "../../assets/svgs.jsx";
+import { SkillsStyles, Stack, Info, StackContainer, Slice, Tech, Tag } from "./Skills.styles.jsx";
 
 const initialState = {
   frontend: false,
@@ -48,9 +49,28 @@ const Skills = () => {
         </Stack>
       </StackContainer>
       <Info>
-        <Tech isVisible={isVisible.info}>Wanna see some skills?</Tech>
-        <Tech isVisible={isVisible.info}>Hover over a piece of the stack on the left.</Tech>
-        <Tech isVisible={isVisible.frontend}>Frontend</Tech>
+        <Tech isVisible={isVisible.info}>
+          Wanna see some skills? <br></br> Hover over a piece of the stack on the left.
+        </Tech>
+        <Tech isVisible={isVisible.frontend}>
+          <div>
+            {JavascriptSVG}
+            <Tag transform={isVisible.frontend}>JavasScript</Tag>
+          </div>
+          <div>
+            {htmlSVG} <Tag transform={isVisible.frontend}>HTML5</Tag>
+          </div>
+          <div>
+            {cssSVG} <Tag transform={isVisible.frontend}>CSS3</Tag>
+          </div>
+          <div>
+            {reactSVG} <Tag transform={isVisible.frontend}>React.js</Tag>
+          </div>
+          <div>
+            {sassSVG}
+            <Tag transform={isVisible.frontend}>SCSS</Tag>
+          </div>
+        </Tech>
         <Tech isVisible={isVisible.backend}>Backend</Tech>
         <Tech isVisible={isVisible.tools}>Tools</Tech>
       </Info>

@@ -64,7 +64,7 @@ const Projects = () => {
       </ProjectContainer>
       <Title>listy</Title>
       <ProjectContainer>
-        <ProjectContent>
+        <ProjectContent reverse>
           <Stack>
             <p>
               Web App I made to save recipes and make lists for grocery shopping. The main feature

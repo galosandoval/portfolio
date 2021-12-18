@@ -9,7 +9,7 @@ export const SkillsStyles = styled.section`
 `;
 
 export const StackContainer = styled.div`
-  flex: 0 0 50%;
+  flex: 0 0 35%;
   ${flexCenter};
   position: relative;
   height: 300px;
@@ -45,15 +45,43 @@ export const Slice = styled.div.attrs((p) => ({
 `;
 
 export const Info = styled.article`
-  flex: 0 0 50%;
+  flex: 0 0 65%;
   ${flexCenter}
   flex-direction: column;
   gap: 2.5rem;
   text-align: center;
+  position: relative;
 `;
 
-export const Tech = styled.p`
-  transition: all 0.5s 0.3s ease;
+export const Tech = styled.div`
+  transition: all 0.8s ease;
   transform: ${(p) => (p.isVisible ? "translateX(0%)" : "translateX(30%)")};
   opacity: ${(p) => (p.isVisible ? 1 : 0)};
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    position: relative;
+
+    & svg {
+      background-color: ${({ theme }) => theme.tertiary};
+    }
+
+    & p {
+    }
+  }
+`;
+
+export const Tag = styled.p`
+  position: absolute;
+  z-index: -1;
+  opacity: ${(p) => (p.transform ? 1 : 0)};
+  transform: ${(p) => (p.transform ? "translateY(300%)" : "translateY(0)")};
+  transition: all 0.3s 0.8s ease;
 `;
