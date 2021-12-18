@@ -13,7 +13,7 @@ import { GlobalVariables } from "../styles/GlobalVariables";
 import { flexCenter } from "../styles/utility";
 import AboutMe from "./AboutMe/AboutMe";
 
-const AppStyles = styled.div`
+const AppStyles = styled.main`
   ${flexCenter}
   flex-direction: column;
 `;

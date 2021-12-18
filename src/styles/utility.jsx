@@ -8,9 +8,6 @@ export const gap = css`
 `;
 export const flex = css`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  ${gap}
 `;
 export const flexCenter = css`
   display: flex;

@@ -7,7 +7,6 @@ export const NavbarStyles = styled.ul`
   align-items: center;
   width: 88%;
   margin-top: 1rem;
-  /* height: 100vh; */
 `;
 
 export const Item = styled.li`
@@ -33,7 +32,7 @@ export const NavA = styled.a.attrs((props) => ({
   target: "_blank"
 }))`
   cursor: pointer;
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.secondary};
   padding: 2rem;
   border-radius: 50%;
   transition: all 0.3s ease;
@@ -41,6 +40,6 @@ export const NavA = styled.a.attrs((props) => ({
   background-color: ${({ theme }) => theme.body};
 
   &:hover {
-    background-color: ${({ theme }) => theme.primary};
+    background-color: ${({ theme }) => theme.tertiary};
   }
 `;

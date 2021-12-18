@@ -6,7 +6,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: ${({ theme }) => theme.primary};
 `;
 
 export const Button = styled.a`
@@ -15,29 +14,29 @@ export const Button = styled.a`
   transition: .3s all ease-in;
   padding: 1.5rem 5.5rem;
   cursor: pointer;
-  box-shadow: 6px 6px 10px ${({ theme }) => theme.primary3},
-    -6px -4px 10px ${({ theme }) => theme.primary2};
-  color: ${({ theme }) => theme.title};
+  box-shadow: 18px 18px 20px ${({ theme }) => theme.shadowDark},
+    -18px -18px 20px ${({ theme }) => theme.shadowLight};
+  color: ${({ theme }) => theme.primary};
 
   &:hover {
-    background-color: ${({ theme }) => theme.text};
-    color: ${({ theme }) => theme.primary};
+    background-color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.body};
   }
 `;
 
 export const Title = styled.h1`
   margin-bottom: 1.5rem;
-  color: ${({ theme }) => theme.title};
+  color: ${({ theme }) => theme.primary};
   font-size: 1.4rem;
 `;
 
 export const SubTitle = styled.h2`
   margin-left: 1rem;
-  color: ${({ theme }) => theme.title};
+  color: ${({ theme }) => theme.primary};
   font-size: 1.2rem;
 `;
 
 export const AccentFont = styled.span`
-  color: ${({ theme }) => theme.title};
+  color: ${({ theme }) => theme.primary};
   margin-left: ${(props) => (props.ml ? props.ml + "rem" : "0")};
 `;

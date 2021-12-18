@@ -9,7 +9,9 @@ export const ProjectStyles = styled.div.attrs(() => ({
   width: 88%;
 `;
 
-export const ProjectContainer = styled(Container)``;
+export const ProjectContainer = styled(Container)`
+  margin-bottom: 5rem;
+`;
 
 export const ProjectContent = styled.div`
   display: flex;
@@ -41,11 +43,11 @@ export const ListItem = styled.li`
   align-items: center;
   span {
     margin-right: 0.5rem;
+    color: ${({ theme }) => theme.primary};
   }
   & > span > svg {
     height: 1.5rem;
     width: 1.5rem;
-    color: ${({ theme }) => theme.title};
   }
 `;
 

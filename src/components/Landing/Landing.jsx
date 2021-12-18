@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { AccentFont, Title } from "../../styles/shared.jsx";
-import AboutMe from "../AboutMe/AboutMe.jsx";
-import { GreyFont, Header, LandingStyles, RedContainer } from "./Landing.styles.jsx";
+import React from "react";
+import { AccentFont } from "../../styles/shared.jsx";
+import { Header, LandingButton, LandingStyles } from "./Landing.styles.jsx";
 
 const Landing = () => {
   return (
@@ -11,6 +10,7 @@ const Landing = () => {
           Hi, I'm <AccentFont>Galo.</AccentFont>
         </h1>
         <h1> I'm a web developer.</h1>
+        <LandingButton>Projects</LandingButton>
       </Header>
     </LandingStyles>
   );

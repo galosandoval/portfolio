@@ -3,7 +3,6 @@ import resume from "../../assets/resume.pdf";
 import { Button, Container } from "../../styles/shared";
 
 export const AboutMeStyles = styled.div`
-  margin-top: 2rem;
   width: 100%;
   transition: transform ease 1.5s 0.5s, opacity 1.5s ease 0.5s;
   div > img {
@@ -19,6 +18,7 @@ export const RedAbout = styled(Container)`
   font-size: 1.2rem;
   font-weight: 400;
   flex-direction: row;
+  margin-bottom: 10rem;
 `;
 
 export const Content = styled.article`
@@ -36,4 +36,9 @@ export const AboutButton = styled(Button).attrs(() => ({
   margin: auto;
   width: 20rem;
   height: 4rem;
+  box-shadow: 18px 18px 20px ${({ theme }) => theme.shadowDark},
+    -18px -18px 20px ${({ theme }) => theme.shadowLight};
+
+  &:hover {
+  }
 `;

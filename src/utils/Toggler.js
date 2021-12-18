@@ -3,7 +3,7 @@ import { func, string } from "prop-types";
 import styled from "styled-components/macro";
 
 const Button = styled.button`
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.primary};
   border-radius: 30px;
   cursor: pointer;
   font-size: 0.8rem;
