@@ -52,9 +52,8 @@ export const Info = styled.article`
   text-align: center;
 `;
 
-export const Tech = styled.p.attrs((p) => ({
-  isVisible: p.isVisible
-}))`
-  transform: ${({ p }) => (p.isVisible ? "translateX(0%)" : "translateX(-30%)")};
-  opacity: ${({ p }) => (p.isVisible ? "1" : "0")};
+export const Tech = styled.p`
+  transition: all 0.5s 0.3s ease;
+  transform: ${(p) => (p.isVisible ? "translateX(0%)" : "translateX(30%)")};
+  opacity: ${(p) => (p.isVisible ? 1 : 0)};
 `;

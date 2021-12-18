@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SkillsStyles, Stack, Info, StackContainer, Slice } from "./Skills.styles.jsx";
+import { SkillsStyles, Stack, Info, StackContainer, Slice, Tech } from "./Skills.styles.jsx";
 
 const initialState = {
   frontend: false,
@@ -48,18 +48,11 @@ const Skills = () => {
         </Stack>
       </StackContainer>
       <Info>
-        {isVisible.info ? (
-          <>
-            <p>Want to see my skill?</p>
-            <p>Hover over a piece of the stack on the left.</p>
-          </>
-        ) : isVisible.frontend ? (
-          <p>Frontend</p>
-        ) : isVisible.backend ? (
-          <p>Backend</p>
-        ) : (
-          <p>Tools</p>
-        )}
+        <Tech isVisible={isVisible.info}>Wanna see some skills?</Tech>
+        <Tech isVisible={isVisible.info}>Hover over a piece of the stack on the left.</Tech>
+        <Tech isVisible={isVisible.frontend}>Frontend</Tech>
+        <Tech isVisible={isVisible.backend}>Backend</Tech>
+        <Tech isVisible={isVisible.tools}>Tools</Tech>
       </Info>
     </SkillsStyles>
   );
