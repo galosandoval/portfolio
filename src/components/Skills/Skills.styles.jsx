@@ -51,3 +51,10 @@ export const Info = styled.article`
   gap: 2.5rem;
   text-align: center;
 `;
+
+export const Tech = styled.p.attrs((p) => ({
+  isVisible: p.isVisible
+}))`
+  transform: ${({ p }) => (p.isVisible ? "translateX(0%)" : "translateX(-30%)")};
+  opacity: ${({ p }) => (p.isVisible ? "1" : "0")};
+`;
