@@ -1,6 +1,15 @@
 import React, { useState } from "react";
-import { cssSVG, htmlSVG, JavascriptSVG, reactSVG, sassSVG } from "../../assets/svgs.jsx";
-import { SkillsStyles, Stack, Info, StackContainer, Slice, Tech, Tag } from "./Skills.styles.jsx";
+import { cssSVG, htmlSVG, JavascriptSVG, nodeSVG, reactSVG, sassSVG } from "../../assets/svgs.jsx";
+import {
+  SkillsStyles,
+  Stack,
+  Info,
+  StackContainer,
+  Slice,
+  Tech,
+  Tag,
+  SliceName
+} from "./Skills.styles.jsx";
 
 const initialState = {
   frontend: false,
@@ -34,18 +43,24 @@ const Skills = () => {
           <Slice
             onMouseOver={handleMouseOver}
             onMouseOut={() => setIsVisible(initialState)}
-            id={"top"}
-          ></Slice>
+            id={"bottom"}
+          >
+            <SliceName>Tools</SliceName>
+          </Slice>
           <Slice
             onMouseOver={handleMouseOver}
             onMouseOut={() => setIsVisible(initialState)}
             id={"middle"}
-          ></Slice>
+          >
+            <SliceName>Backend</SliceName>
+          </Slice>
           <Slice
             onMouseOver={handleMouseOver}
             onMouseOut={() => setIsVisible(initialState)}
-            id={"bottom"}
-          ></Slice>
+            id={"top"}
+          >
+            <SliceName>Frontend</SliceName>
+          </Slice>
         </Stack>
       </StackContainer>
       <Info>
@@ -71,7 +86,12 @@ const Skills = () => {
             <Tag transform={isVisible.frontend}>SCSS</Tag>
           </div>
         </Tech>
-        <Tech isVisible={isVisible.backend}>Backend</Tech>
+        <Tech isVisible={isVisible.backend}>
+          <div>
+            {nodeSVG}
+            <Tag transform={isVisible.backend}>Node.js</Tag>
+          </div>
+        </Tech>
         <Tech isVisible={isVisible.tools}>Tools</Tech>
       </Info>
     </SkillsStyles>

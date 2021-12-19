@@ -6,6 +6,10 @@ export const SkillsStyles = styled.section`
   ${flex}
   width: 100%;
   background-color: ${({ theme }) => theme.tertiary};
+
+  &:hover div > div > div:not(:first-child) {
+    margin-bottom: 0rem;
+  }
 `;
 
 export const StackContainer = styled.div`
@@ -14,18 +18,18 @@ export const StackContainer = styled.div`
   position: relative;
   height: 300px;
   align-self: center;
-  &:hover > div {
-    gap: 2rem;
-  }
 `;
 
 export const Stack = styled.div`
   position: absolute;
   ${flexCenter}
-  flex-direction: column;
+  flex-direction: column-reverse;
   margin: 4rem 0;
-  gap: 1rem;
-  transition: gap 0.5s ease;
+  transition: all 0.5s ease;
+
+  & div:not(:first-child) {
+    margin-bottom: -4rem;
+  }
 `;
 
 export const Slice = styled.div.attrs((p) => ({
@@ -33,15 +37,22 @@ export const Slice = styled.div.attrs((p) => ({
   onMouseOver: p.onMouseOver,
   onMouseOut: p.onMouseOut
 }))`
-  height: 2rem;
-  width: 9rem;
+  height: 6rem;
+  width: 6rem;
   background-color: ${({ theme }) => theme.secondary};
-  border-radius: 10px;
   transition: all 0.3s ease;
+  transform: rotate(45deg) skew(165deg, 165deg);
+  border-radius: 10px;
+  border: 4px solid ${({ theme }) => theme.tertiary};
+  position: relative;
 
   &:hover {
     background-color: hsl(${colorPrimaryLight});
   }
+`;
+
+export const SliceName = styled.h3`
+  position: absolute;
 `;
 
 export const Info = styled.article`
@@ -57,6 +68,7 @@ export const Tech = styled.div`
   transition: all 0.8s ease;
   transform: ${(p) => (p.isVisible ? "translateX(0%)" : "translateX(30%)")};
   opacity: ${(p) => (p.isVisible ? 1 : 0)};
+  visibility: ${(p) => (p.isVisible ? "visible" : "hidden")};
   position: absolute;
   display: flex;
   justify-content: space-between;

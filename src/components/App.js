@@ -16,6 +16,7 @@ import AboutMe from "./AboutMe/AboutMe";
 const AppStyles = styled.main`
   ${flexCenter}
   flex-direction: column;
+  overflow: hidden;
 `;
 
 function App() {
