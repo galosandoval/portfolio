@@ -54,7 +54,7 @@ html {
 
 body {
     background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.secondary};
     ${ffRoboto}
     transition: all 0.50s linear;
     font-weight: 400;

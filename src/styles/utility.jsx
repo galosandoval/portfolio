@@ -8,22 +8,14 @@ export const gap = css`
 `;
 export const flex = css`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  ${gap}
 `;
 export const flexCenter = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${gap}
 `;
 export const Center = styled.div`
   ${flexCenter}
-`;
-export const grid = css`
-  display: grid;
-  ${gap}
 `;
 export const block = css`
   display: block;

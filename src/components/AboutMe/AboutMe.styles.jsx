@@ -1,14 +1,9 @@
 import styled from "styled-components/macro";
-import { ContainerButton } from "../Landing/Landing.styles";
 import resume from "../../assets/resume.pdf";
-import { css } from "styled-components";
-import { Container } from "../../styles/shared";
+import { Button, Container } from "../../styles/shared";
 
 export const AboutMeStyles = styled.div`
-  margin-top: 2rem;
   width: 100%;
-  transform: translatex(-50%);
-  opacity: 0;
   transition: transform ease 1.5s 0.5s, opacity 1.5s ease 0.5s;
   div > img {
     height: 60vh;
@@ -17,19 +12,13 @@ export const AboutMeStyles = styled.div`
     filter: brightness(0.8);
     align-self: center;
   }
-
-  ${({ isVisible }) =>
-    isVisible &&
-    css`
-      transform: translateX(0);
-      opacity: 1;
-    `}
 `;
 
 export const RedAbout = styled(Container)`
   font-size: 1.2rem;
   font-weight: 400;
   flex-direction: row;
+  margin-bottom: 10rem;
 `;
 
 export const Content = styled.article`
@@ -39,7 +28,7 @@ export const Content = styled.article`
   padding: 4rem 5rem 2rem 5rem;
 `;
 
-export const AboutButton = styled(ContainerButton).attrs(() => ({
+export const AboutButton = styled(Button).attrs(() => ({
   href: resume,
   target: "_blank",
   rel: "noreferrer"
@@ -47,4 +36,9 @@ export const AboutButton = styled(ContainerButton).attrs(() => ({
   margin: auto;
   width: 20rem;
   height: 4rem;
+  box-shadow: 18px 18px 20px ${({ theme }) => theme.shadowDark},
+    -18px -18px 20px ${({ theme }) => theme.shadowLight};
+
+  &:hover {
+  }
 `;

@@ -15,7 +15,7 @@ export const GlobalVariables = createGlobalStyle`
     --color-tertiary-light: 0 100% 39%;
 
     --color-background: 0 0% 21%;
-    --color-dark: 230 35% 7%;
+    --color-black: 213 10% 18%;
     --color-light: 231 77% 90%;
     --color-white: 0 0% 100%;
     
@@ -51,27 +51,25 @@ export const GlobalVariables = createGlobalStyle`
 }
 
 `;
-export const colorPrimary = "354 16% 23%";
-export const colorPrimary2 = "354 16% 25%";
-export const colorPrimary3 = "354 16% 20%";
-export const colorPrimaryLight = "354 71% 97%";
-export const colorPrimaryLight2 = "354 71% 99%";
-export const colorPrimaryLight3 = "354 71% 94%";
-export const colorSecondary = "358 79% 57%";
-export const colorSecondaryLight = "353 80% 45%";
-export const colorTertiary = "4 52% 58%";
-export const colorTertiaryLight = "0 100% 39%";
-export const colorBackgroundFont = "198 4% 55%";
+
+export const colorWhite = "206 23% 94%";
+export const colorBlack = "213 10% 18%";
+
+export const colorPrimaryLight = "47 81% 56%";
+export const colorSecondaryLight = "198 4% 55%";
+export const colorTertiaryLight = "355 73% 97%";
+export const colorPrimaryDark = "4 21% 74%";
+export const colorSecondaryDark = "218, 4%, 42%";
+export const colorTertiaryDark = "4 21% 74%";
+
 export const colorBackgroundFontLight = "203 5% 66%";
 
-export const colorDark = "230 35% 7%";
-export const colorLight = "231 77% 90%";
-export const colorWhite = " 0 0% 100%";
-export const colorBackground = "0 0% 21%";
+export const colorShadowDarkWhite = "217 30% 86%";
+export const colorShadowLightWhite = "0 0% 100%";
+export const colorShadowDarkBlack = "223 9% 15%";
+export const colorShadowLightBlack = "216  9% 21%";
 
-export const colorFontPink = "4 21% 74%";
 export const colorFontGrey = "0 0% 77%";
-
 /**
  * Font Families
  */

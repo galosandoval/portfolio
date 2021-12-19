@@ -11,11 +11,12 @@ import { GlobalStyle } from "../styles/globalStyles";
 import { useDarkMode } from "../utils/useDarkMode";
 import { GlobalVariables } from "../styles/GlobalVariables";
 import { flexCenter } from "../styles/utility";
+import AboutMe from "./AboutMe/AboutMe";
 
-
-const AppStyles = styled.div`
+const AppStyles = styled.main`
   ${flexCenter}
   flex-direction: column;
+  overflow: hidden;
 `;
 
 function App() {
@@ -29,8 +30,9 @@ function App() {
       <GlobalStyle />
       <GlobalVariables />
       <AppStyles>
-        <Landing />
         <Navbar theme={theme} themeToggler={themeToggler} />
+        <Landing />
+        <AboutMe />
         <Projects />
         <Skills />
       </AppStyles>

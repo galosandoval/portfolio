@@ -6,7 +6,7 @@ export const NavbarStyles = styled.ul`
   justify-content: space-between;
   align-items: center;
   width: 88%;
-  height: 100vh;
+  margin-top: 1rem;
 `;
 
 export const Item = styled.li`
@@ -14,7 +14,7 @@ export const Item = styled.li`
   ${flexCenter}
 
   span {
-    transition: all ease-in-out 0.7s;
+    transition: all ease-out 0.5s;
     position: absolute;
     z-index: -1;
     opacity: 0;
@@ -22,7 +22,7 @@ export const Item = styled.li`
   }
 
   &:hover > span {
-    transform: translateY(-330%);
+    transform: translateY(330%);
     opacity: 1;
   }
 `;
@@ -32,7 +32,7 @@ export const NavA = styled.a.attrs((props) => ({
   target: "_blank"
 }))`
   cursor: pointer;
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.secondary};
   padding: 2rem;
   border-radius: 50%;
   transition: all 0.3s ease;
@@ -40,6 +40,6 @@ export const NavA = styled.a.attrs((props) => ({
   background-color: ${({ theme }) => theme.body};
 
   &:hover {
-    background-color: ${({ theme }) => theme.primary};
+    background-color: ${({ theme }) => theme.tertiary};
   }
 `;

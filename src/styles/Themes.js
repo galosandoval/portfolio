@@ -1,38 +1,31 @@
 import {
-  colorBackground,
-  colorBackgroundFont,
-  colorBackgroundFontLight,
-  colorFontPink,
-  colorPrimary,
-  colorPrimary2,
-  colorPrimary3,
+  colorBlack,
+  colorPrimaryDark,
   colorPrimaryLight,
-  colorPrimaryLight2,
-  colorPrimaryLight3,
-  colorSecondary,
   colorSecondaryLight,
-  colorTertiary,
+  colorShadowDarkBlack,
+  colorShadowDarkWhite,
+  colorShadowLightBlack,
+  colorShadowLightWhite,
+  colorSecondaryDark,
   colorTertiaryLight,
-  colorWhite
+  colorWhite,
+  colorTertiaryDark
 } from "./GlobalVariables";
 
 export const lightTheme = {
   body: `hsl(${colorWhite})`,
-  text: `hsl(${colorBackgroundFontLight})`,
-  primary: `hsl(${colorPrimaryLight})`,
-  primary2: `hsl(${colorPrimaryLight2})`,
-  primary3: `hsl(${colorPrimaryLight3})`,
-  title: `hsl(${colorSecondaryLight})`,
-  tertiary: `hsl(${colorTertiaryLight})`,
-  backgroundFont: `hsl(${colorBackgroundFontLight})`
+  primary: `hsl(${colorPrimaryLight})`, // saffron
+  secondary: `hsl(${colorSecondaryLight})`, // spanish gray
+  tertiary: `hsl(${colorTertiaryLight})`, //
+  shadowLight: `hsl(${colorShadowLightWhite})`,
+  shadowDark: `hsl(${colorShadowDarkWhite})`
 };
 export const darkTheme = {
-  body: `hsl(${colorBackground})`,
-  text: `hsl(${colorFontPink})`,
-  primary: `hsl(${colorPrimary})`,
-  primary2: `hsl(${colorPrimary2})`,
-  primary3: `hsl(${colorPrimary3})`,
-  title: `hsl(${colorSecondary})`,
-  tertiary: `hsl(${colorTertiary})`,
-  backgroundFont: `hsl(${colorBackgroundFont})`
+  body: `hsl(${colorBlack})`, // gunmetal
+  primary: `hsl(${colorPrimaryDark})`,
+  secondary: `hsl(${colorSecondaryDark})`,
+  tertiary: `hsl(${colorTertiaryDark})`, // Dim gray
+  shadowLight: `hsl(${colorShadowLightBlack})`,
+  shadowDark: `hsl(${colorShadowDarkBlack})`
 };
