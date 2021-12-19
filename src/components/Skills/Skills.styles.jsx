@@ -1,11 +1,13 @@
 import styled from "styled-components/macro";
 import { flex, flexCenter } from "../../styles/utility";
 import { colorPrimaryLight } from "../../styles/GlobalVariables";
+import { toolsSVG } from "../../assets/svgs";
 
 export const SkillsStyles = styled.section`
   ${flex}
   width: 100%;
   background-color: ${({ theme }) => theme.tertiary};
+  padding: 4rem 0;
 
   &:hover div > div > div:not(:first-child) {
     margin-bottom: 0rem;
@@ -45,14 +47,37 @@ export const Slice = styled.div.attrs((p) => ({
   border-radius: 10px;
   border: 4px solid ${({ theme }) => theme.tertiary};
   position: relative;
+  z-index: 1000;
+
+  ${flexCenter}
+
+  & svg {
+    transform: skew(-165deg, -165deg) rotate(-45deg);
+    position: absolute;
+  }
+
+  & h3 {
+    transform: skew(-165deg, -165deg) rotate(-45deg) translateX(100%);
+  }
 
   &:hover {
     background-color: hsl(${colorPrimaryLight});
+    /* color */
+  }
+
+  &:hover h3 {
+    transform: skew(-165deg, -165deg) rotate(-45deg) translateX(${(p) => p.transform}%);
+    z-index: -1;
+    opacity: 1;
   }
 `;
 
 export const SliceName = styled.h3`
   position: absolute;
+  transition: 0.8s ease all;
+  opacity: 0;
+  z-index: -1;
+  font-size: 1.5rem;
 `;
 
 export const Info = styled.article`
@@ -95,5 +120,5 @@ export const Tag = styled.p`
   z-index: -1;
   opacity: ${(p) => (p.transform ? 1 : 0)};
   transform: ${(p) => (p.transform ? "translateY(300%)" : "translateY(0)")};
-  transition: all 0.3s 0.8s ease;
+  transition: all 0.5s 0.5s ease;
 `;
