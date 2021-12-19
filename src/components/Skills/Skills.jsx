@@ -1,16 +1,5 @@
 import React, { useState } from "react";
-import { backend, frontend, skills, stack, tools } from "../../assets/skills.js";
-import {
-  cssSVG,
-  dbSVG,
-  frontendSVG,
-  htmlSVG,
-  JavascriptSVG,
-  nodeSVG,
-  reactSVG,
-  sassSVG,
-  toolsSVG
-} from "../../assets/svgs.jsx";
+import { backend, frontend, stack, tools } from "../../assets/skills.js";
 import {
   SkillsStyles,
   Stack,

@@ -1,7 +1,6 @@
 import styled from "styled-components/macro";
 import { flex, flexCenter } from "../../styles/utility";
 import { colorPrimaryLight } from "../../styles/GlobalVariables";
-import { toolsSVG } from "../../assets/svgs";
 
 export const SkillsStyles = styled.section`
   ${flex}
@@ -121,4 +120,5 @@ export const Tag = styled.p`
   opacity: ${(p) => (p.transform ? 1 : 0)};
   transform: ${(p) => (p.transform ? "translateY(300%)" : "translateY(0)")};
   transition: all 0.5s 0.5s ease;
+  width: max-content;
 `;

@@ -9,22 +9,13 @@ import {
   postgresSVG,
   dbSVG,
   toolsSVG,
-  knexLogo
+  knexLogo,
+  gitSVG,
+  agileSVG,
+  figmaSVG,
+  trelloSVG,
+  styledSVG
 } from "./svgs";
-
-export const frontend = [
-  { name: "JavaScript", icon: JavascriptSVG },
-  { name: "HTML5", icon: htmlSVG },
-  { name: "CSS3", icon: cssSVG },
-  { name: "React.js", icon: reactSVG },
-  { name: "SCSS", icon: sassSVG }
-];
-export const backend = [
-  { name: "Node.js", icon: nodeSVG },
-  { name: "PostgreSQL", icon: postgresSVG },
-  { name: "Knex", icon: knexLogo }
-];
-export const tools = [{ name: "None", icon: nodeSVG }];
 
 export const stack = [
   {
@@ -45,4 +36,25 @@ export const stack = [
     transform: 135,
     icon: frontendSVG
   }
+];
+
+export const frontend = [
+  { name: "JavaScript", icon: JavascriptSVG },
+  { name: "HTML5", icon: htmlSVG },
+  { name: "CSS3", icon: cssSVG },
+  { name: "React.js", icon: reactSVG },
+  { name: "SCSS", icon: sassSVG },
+  { name: "Styled-Components", icon: styledSVG }
+];
+export const backend = [
+  { name: "Node.js", icon: nodeSVG },
+  { name: "PostgreSQL", icon: postgresSVG },
+  { name: "Knex", icon: knexLogo },
+  { name: "SQL", icon: dbSVG }
+];
+export const tools = [
+  { name: "Git", icon: gitSVG },
+  { name: "Agile", icon: agileSVG },
+  { name: "Figma", icon: figmaSVG },
+  { name: "Trello", icon: trelloSVG }
 ];
