@@ -2,7 +2,9 @@ import styled from "styled-components/macro";
 import resume from "../../assets/resume.pdf";
 import { Button, Container } from "../../styles/shared";
 
-export const AboutMeStyles = styled.div`
+export const AboutMeStyles = styled.div.attrs(() => ({
+  id: "about"
+}))`
   width: 100%;
   transition: transform ease 1.5s 0.5s, opacity 1.5s ease 0.5s;
   div > img {

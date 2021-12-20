@@ -29,7 +29,7 @@ export const Item = styled.li`
 
 export const NavA = styled.a.attrs((props) => ({
   href: props.href,
-  target: "_blank"
+  target: props.target ? props.target : "_self"
 }))`
   cursor: pointer;
   color: ${({ theme }) => theme.secondary};

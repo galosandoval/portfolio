@@ -11,147 +11,38 @@ import {
   ListItem,
   List
 } from "./Projects.styles.jsx";
-import listy from "../../assets/listy-screenshot.png";
 import { SubTitle, Title } from "../../styles/shared.jsx";
+import { projects } from "../../assets/projects.js";
 
 const Projects = () => {
   return (
     <ProjectStyles>
-      <Title>listy</Title>
-      <ProjectContainer>
-        <ProjectContent>
-          <Stack>
-            <p>
-              Web App I made to save recipes and make lists for grocery shopping. The main feature
-              of the app is it parses instructions and ingredients from your favorite recipes and
-              saves them to your account.
-            </p>
-            <SubTitle>Stack</SubTitle>
-            <List>
-              <ListItem>
-                <span>{checkSVG}</span>React
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>SCSS
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>Node.js
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>Express
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>React-Query
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>sqlite3
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>Knex
-              </ListItem>
-            </List>
-          </Stack>
-          <VideoContainer>
-            <img src={listy} alt="listy dashboard" />
-          </VideoContainer>
-        </ProjectContent>
-        <ButtonContainer>
-          <ProjectButton href="https://github.com/galosandoval/listy-frontend">
-            {codeSVG}
-          </ProjectButton>
-          <ProjectButton href="https://awesome-jackson-9126be.netlify.app/">{webSVG}</ProjectButton>
-        </ButtonContainer>
-      </ProjectContainer>
-      <Title>listy</Title>
-      <ProjectContainer>
-        <ProjectContent reverse>
-          <Stack>
-            <p>
-              Web App I made to save recipes and make lists for grocery shopping. The main feature
-              of the app is it parses instructions and ingredients from your favorite recipes and
-              saves them to your account.
-            </p>
-            <SubTitle>Stack</SubTitle>
-            <List>
-              <ListItem>
-                <span>{checkSVG}</span>React
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>SCSS
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>Node.js
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>Express
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>React-Query
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>sqlite3
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>Knex
-              </ListItem>
-            </List>
-          </Stack>
-          <VideoContainer>
-            <img src={listy} alt="listy dashboard" />
-          </VideoContainer>
-        </ProjectContent>
-        <ButtonContainer>
-          <ProjectButton href="https://github.com/galosandoval/listy-frontend">
-            {codeSVG}
-          </ProjectButton>
-          <ProjectButton href="https://awesome-jackson-9126be.netlify.app/">{webSVG}</ProjectButton>
-        </ButtonContainer>
-      </ProjectContainer>
-      <Title>listy</Title>
-      <ProjectContainer>
-        <ProjectContent>
-          <Stack>
-            <p>
-              Web App I made to save recipes and make lists for grocery shopping. The main feature
-              of the app is it parses instructions and ingredients from your favorite recipes and
-              saves them to your account.
-            </p>
-            <SubTitle>Stack</SubTitle>
-            <List>
-              <ListItem>
-                <span>{checkSVG}</span>React
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>SCSS
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>Node.js
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>Express
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>React-Query
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>sqlite3
-              </ListItem>
-              <ListItem>
-                <span>{checkSVG}</span>Knex
-              </ListItem>
-            </List>
-          </Stack>
-          <VideoContainer>
-            <img src={listy} alt="listy dashboard" />
-          </VideoContainer>
-        </ProjectContent>
-        <ButtonContainer>
-          <ProjectButton href="https://github.com/galosandoval/listy-frontend">
-            {codeSVG}
-          </ProjectButton>
-          <ProjectButton href="https://awesome-jackson-9126be.netlify.app/">{webSVG}</ProjectButton>
-        </ButtonContainer>
-      </ProjectContainer>
+      {projects.map((project) => (
+        <ProjectContainer>
+          <Title>{project.name}</Title>
+          <ProjectContent reverse={project.reverse}>
+            <Stack>
+              <p>{project.description}</p>
+              <SubTitle>Stack</SubTitle>
+              <List>
+                {project.stack.map((s) => (
+                  <ListItem>
+                    <span>{checkSVG}</span>
+                    {s}
+                  </ListItem>
+                ))}
+              </List>
+            </Stack>
+            <VideoContainer>
+              <img src={project.video} alt={project.name} />
+            </VideoContainer>
+          </ProjectContent>
+          <ButtonContainer>
+            <ProjectButton href={project.github}>{codeSVG}</ProjectButton>
+            {project.web && <ProjectButton href={project.web}>{webSVG}</ProjectButton>}
+          </ButtonContainer>
+        </ProjectContainer>
+      ))}
     </ProjectStyles>
   );
 };

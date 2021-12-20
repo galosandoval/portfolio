@@ -5,12 +5,11 @@ import { flexCenter } from "../../styles/utility";
 export const ProjectStyles = styled.div.attrs(() => ({
   id: "projects"
 }))`
-  /* height: 100vh; */
   width: 88%;
 `;
 
 export const ProjectContainer = styled(Container)`
-  margin-bottom: 5rem;
+  padding: 5rem 0;
 `;
 
 export const ProjectContent = styled.div`
@@ -55,7 +54,8 @@ export const ListItem = styled.li`
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 2rem;
+  padding: 2rem 0;
+  align-items: center;
 `;
 
 export const ProjectButton = styled(Button).attrs((p) => ({

@@ -2,11 +2,13 @@ import styled from "styled-components/macro";
 import { flex, flexCenter } from "../../styles/utility";
 import { colorPrimaryLight } from "../../styles/GlobalVariables";
 
-export const SkillsStyles = styled.section`
+export const SkillsStyles = styled.section.attrs(() => ({
+  id: "skills"
+}))`
   ${flex}
   width: 100%;
   background-color: ${({ theme }) => theme.tertiary};
-  padding: 4rem 0;
+  padding: 10rem 0;
 
   &:hover div > div > div:not(:first-child) {
     margin-bottom: 0rem;
@@ -29,7 +31,7 @@ export const Stack = styled.div`
   transition: all 0.5s ease;
 
   & div:not(:first-child) {
-    margin-bottom: -4rem;
+    margin-bottom: -8rem;
   }
 `;
 
@@ -38,8 +40,8 @@ export const Slice = styled.div.attrs((p) => ({
   onMouseOver: p.onMouseOver,
   onMouseOut: p.onMouseOut
 }))`
-  height: 6rem;
-  width: 6rem;
+  height: 10rem;
+  width: 10rem;
   background-color: ${({ theme }) => theme.secondary};
   transition: all 0.3s ease;
   transform: rotate(45deg) skew(165deg, 165deg);
@@ -56,7 +58,7 @@ export const Slice = styled.div.attrs((p) => ({
   }
 
   & h3 {
-    transform: skew(-165deg, -165deg) rotate(-45deg) translateX(100%);
+    transform: skew(-165deg, -165deg) rotate(-45deg) translateX(140%);
   }
 
   &:hover {
@@ -65,7 +67,7 @@ export const Slice = styled.div.attrs((p) => ({
   }
 
   &:hover h3 {
-    transform: skew(-165deg, -165deg) rotate(-45deg) translateX(${(p) => p.transform}%);
+    transform: skew(-165deg, -165deg) rotate(-45deg) translateX(${(p) => p.move}%);
     z-index: -1;
     opacity: 1;
   }

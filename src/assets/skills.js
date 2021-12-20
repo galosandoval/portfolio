@@ -21,19 +21,19 @@ export const stack = [
   {
     name: "Tools",
     id: "bottom",
-    transform: 180,
+    transform: 265,
     icon: toolsSVG
   },
   {
     name: "Backend",
     id: "middle",
-    transform: 150,
+    transform: 205,
     icon: dbSVG
   },
   {
     name: "Frontend",
     id: "top",
-    transform: 135,
+    transform: 185,
     icon: frontendSVG
   }
 ];

@@ -46,7 +46,7 @@ const Skills = () => {
               onMouseOver={handleMouseOver}
               onMouseOut={() => setIsVisible(initialState)}
               id={s.id}
-              transform={s.transform}
+              move={s.transform}
             >
               {s.icon}
               <SliceName>{s.name}</SliceName>
