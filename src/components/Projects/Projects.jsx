@@ -18,7 +18,7 @@ const Projects = () => {
   return (
     <ProjectStyles>
       {projects.map((project) => (
-        <ProjectContainer>
+        <ProjectContainer key={project.name}>
           <Title>{project.name}</Title>
           <ProjectContent reverse={project.reverse}>
             <Stack>
@@ -26,7 +26,7 @@ const Projects = () => {
               <SubTitle>Stack</SubTitle>
               <List>
                 {project.stack.map((s) => (
-                  <ListItem>
+                  <ListItem key={s}>
                     <span>{checkSVG}</span>
                     {s}
                   </ListItem>

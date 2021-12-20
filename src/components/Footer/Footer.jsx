@@ -1,23 +1,48 @@
 import React from "react";
 import { fileSVG, githubSVG, linkedInSVG } from "../../assets/svgs";
-import { Item, NavA } from "../Navigation/Navbar.styles";
-import { FooterStyles, IconContainer } from "./Footer.styles";
+import { Item } from "../Navigation/Navbar.styles";
+import { FooterStyles, IconContainer, FooterLink, Legal } from "./Footer.styles";
+import resume from "../../assets/resume.pdf";
 
 const Footer = () => {
   return (
     <FooterStyles>
       <IconContainer>
         <Item>
-          <NavA href="https://github.com/galosandoval">{githubSVG}</NavA>
+          <FooterLink href="https://github.com/galosandoval" target="_blank">
+            {githubSVG}
+          </FooterLink>
         </Item>
         <Item>
-          <NavA href="https://www.linkedin.com/in/galo-sandoval/" target="_blank">
+          <FooterLink href="https://www.linkedin.com/in/galo-sandoval/" target="_blank">
             {linkedInSVG}
-          </NavA>
+          </FooterLink>
         </Item>
-
-        {fileSVG}
+        <Item>
+          <FooterLink href={resume} target="_blank">
+            {fileSVG}
+          </FooterLink>
+        </Item>
       </IconContainer>
+      <Legal>
+        <div>
+          <p>
+            <a href="https://github.com/galosandoval/portfolio" target="_blank" rel="noreferrer">
+              import * from "./galo_sandoval
+            </a>
+          </p>
+          <p>
+            <a href="https://freeicons.io/profile/714" target="_blank" rel="noreferrer">
+              import icons from "./raj_dev"
+            </a>
+          </p>
+          <p>
+            <a href="https://www.pablostanley.com/" target="_blank" rel="noreferrer">
+              import images from "./pablo_stanley"
+            </a>
+          </p>
+        </div>
+      </Legal>
     </FooterStyles>
   );
 };
