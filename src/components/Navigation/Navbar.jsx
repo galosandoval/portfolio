@@ -30,11 +30,15 @@ const Navbar = ({ theme, themeToggler }) => {
         <span>Contact</span>
       </Item>
       <Item>
-        <NavA href="https://github.com/galosandoval">{githubSVG}</NavA>
+        <NavA href="https://github.com/galosandoval" target="_blank">
+          {githubSVG}
+        </NavA>
         <span>Github</span>
       </Item>
       <Item>
-        <NavA href="https://www.linkedin.com/in/galo-sandoval/">{linkedInSVG}</NavA>
+        <NavA href="https://www.linkedin.com/in/galo-sandoval/" target="_blank">
+          {linkedInSVG}
+        </NavA>
         <span>LinkedIn</span>
       </Item>
       <li>

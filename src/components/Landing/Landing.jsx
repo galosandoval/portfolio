@@ -10,7 +10,7 @@ const Landing = () => {
           Hi, I'm <AccentFont>Galo.</AccentFont>
         </h1>
         <h1> I'm a web developer.</h1>
-        <LandingButton>Projects</LandingButton>
+        <LandingButton href="#projects">Projects</LandingButton>
       </Header>
     </LandingStyles>
   );

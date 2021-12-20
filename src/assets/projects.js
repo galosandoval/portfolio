@@ -14,7 +14,7 @@ export const projects = [
     name: "4-7-8 Breathing Helper",
     stack: ["React", "JavaScript", "CSS"],
     description:
-      "I read a book about how breathing exercises can improve your well-being. With the 4-7-8 Breathing Helper, control your cravings and sleep faster. You'll find links to more information in the app.",
+      "Breathing exercises can improve your well-being. With the 4-7-8 Breathing Helper, control your cravings and sleep faster. You'll find links to more information in the app.",
     video: listy,
     web: "https://478-breathing.vercel.app/",
     github: "https://github.com/galosandoval/478-breathing",

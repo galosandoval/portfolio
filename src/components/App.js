@@ -12,6 +12,8 @@ import { useDarkMode } from "../utils/useDarkMode";
 import { GlobalVariables } from "../styles/GlobalVariables";
 import { flexCenter } from "../styles/utility";
 import AboutMe from "./AboutMe/AboutMe";
+import ContactMe from "./ContactMe/ContactMe";
+import Footer from "./Footer/Footer";
 
 const AppStyles = styled.main`
   ${flexCenter}
@@ -35,6 +37,8 @@ function App() {
         <AboutMe />
         <Projects />
         <Skills />
+        <ContactMe />
+        <Footer />
       </AppStyles>
     </ThemeProvider>
   );
