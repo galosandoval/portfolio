@@ -1,7 +1,9 @@
 import styled from "styled-components/macro";
 import { flexCenter } from "../../styles/utility";
 
-export const NavbarStyles = styled.ul`
+export const NavbarStyles = styled.ul.attrs(() => ({
+  id: "nav"
+}))`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +31,7 @@ export const Item = styled.li`
 
 export const NavA = styled.a.attrs((props) => ({
   href: props.href,
-  target: "_blank"
+  target: props.target ? props.target : "_self"
 }))`
   cursor: pointer;
   color: ${({ theme }) => theme.secondary};

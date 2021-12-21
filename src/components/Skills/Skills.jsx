@@ -1,16 +1,5 @@
 import React, { useState } from "react";
-import { backend, frontend, skills, stack, tools } from "../../assets/skills.js";
-import {
-  cssSVG,
-  dbSVG,
-  frontendSVG,
-  htmlSVG,
-  JavascriptSVG,
-  nodeSVG,
-  reactSVG,
-  sassSVG,
-  toolsSVG
-} from "../../assets/svgs.jsx";
+import { backend, frontend, stack, tools } from "../../assets/skillsData.js";
 import {
   SkillsStyles,
   Stack,
@@ -57,7 +46,7 @@ const Skills = () => {
               onMouseOver={handleMouseOver}
               onMouseOut={() => setIsVisible(initialState)}
               id={s.id}
-              transform={s.transform}
+              move={s.transform}
             >
               {s.icon}
               <SliceName>{s.name}</SliceName>
@@ -66,14 +55,14 @@ const Skills = () => {
         </Stack>
       </StackContainer>
       <Info>
-        <Tech isVisible={isVisible.info}>
+        <Tech isVisible={isVisible.info} as="p">
           Wanna see some skills? <br></br> Hover over a piece of the stack on the left.
         </Tech>
         <Tech isVisible={isVisible.frontend}>
           {frontend.map((tech) => (
             <div key={tech.name}>
               {tech.icon}
-              <Tag transform={isVisible.frontend}>{tech.name}</Tag>
+              <Tag move={isVisible.frontend}>{tech.name}</Tag>
             </div>
           ))}
         </Tech>
@@ -81,7 +70,7 @@ const Skills = () => {
           {backend.map((tech) => (
             <div key={tech.name}>
               {tech.icon}
-              <Tag transform={isVisible.backend}>{tech.name}</Tag>
+              <Tag move={isVisible.backend}>{tech.name}</Tag>
             </div>
           ))}
         </Tech>
@@ -89,7 +78,7 @@ const Skills = () => {
           {tools.map((tech) => (
             <div key={tech.name}>
               {tech.icon}
-              <Tag transform={isVisible.tools}>{tech.name}</Tag>
+              <Tag move={isVisible.tools}>{tech.name}</Tag>
             </div>
           ))}
         </Tech>

@@ -19,7 +19,8 @@ export const lightTheme = {
   secondary: `hsl(${colorSecondaryLight})`, // spanish gray
   tertiary: `hsl(${colorTertiaryLight})`, //
   shadowLight: `hsl(${colorShadowLightWhite})`,
-  shadowDark: `hsl(${colorShadowDarkWhite})`
+  shadowDark: `hsl(${colorShadowDarkWhite})`,
+  mode: "translateX(-44%)"
 };
 export const darkTheme = {
   body: `hsl(${colorBlack})`, // gunmetal
@@ -27,5 +28,6 @@ export const darkTheme = {
   secondary: `hsl(${colorSecondaryDark})`,
   tertiary: `hsl(${colorTertiaryDark})`, // Dim gray
   shadowLight: `hsl(${colorShadowLightBlack})`,
-  shadowDark: `hsl(${colorShadowDarkBlack})`
+  shadowDark: `hsl(${colorShadowDarkBlack})`,
+  mode: "translateX(44%)"
 };

@@ -4,10 +4,12 @@ import {
   contactSVG,
   githubSVG,
   linkedInSVG,
+  moonSVG,
   projectsSVG,
-  stackSVG
+  stackSVG,
+  sunSVG
 } from "../../assets/svgs.jsx";
-import Toggle from "../../utils/Toggler";
+import { Toggle } from "../../utils/Toggle";
 import { NavbarStyles, NavA, Item } from "./Navbar.styles.jsx";
 
 const Navbar = ({ theme, themeToggler }) => {
@@ -30,15 +32,21 @@ const Navbar = ({ theme, themeToggler }) => {
         <span>Contact</span>
       </Item>
       <Item>
-        <NavA href="https://github.com/galosandoval">{githubSVG}</NavA>
+        <NavA href="https://github.com/galosandoval" target="_blank">
+          {githubSVG}
+        </NavA>
         <span>Github</span>
       </Item>
       <Item>
-        <NavA href="https://www.linkedin.com/in/galo-sandoval/">{linkedInSVG}</NavA>
+        <NavA href="https://www.linkedin.com/in/galo-sandoval/" target="_blank">
+          {linkedInSVG}
+        </NavA>
         <span>LinkedIn</span>
       </Item>
       <li>
-        <Toggle theme={theme} toggleTheme={themeToggler} />
+        <Toggle onClick={themeToggler}>
+          <span>{theme === "dark" ? moonSVG : sunSVG}</span>
+        </Toggle>
       </li>
     </NavbarStyles>
   );
