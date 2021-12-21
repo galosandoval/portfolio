@@ -14,6 +14,7 @@ import { flexCenter } from "../styles/utility";
 import AboutMe from "./AboutMe/AboutMe";
 import ContactMe from "./ContactMe/ContactMe";
 import Footer from "./Footer/Footer";
+import ScrollToTop from "./ScrollToTop";
 
 const AppStyles = styled.main`
   ${flexCenter}
@@ -39,6 +40,7 @@ function App() {
         <Skills />
         <ContactMe />
         <Footer />
+        <ScrollToTop />
       </AppStyles>
     </ThemeProvider>
   );

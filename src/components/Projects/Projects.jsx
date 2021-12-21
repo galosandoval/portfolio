@@ -12,7 +12,7 @@ import {
   List
 } from "./Projects.styles.jsx";
 import { SubTitle, Title } from "../../styles/shared.jsx";
-import { projects } from "../../assets/projects.js";
+import { projects } from "../../assets/projectsData.js";
 
 const Projects = () => {
   return (

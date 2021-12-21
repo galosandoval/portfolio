@@ -45,4 +45,6 @@ export const ContactForm = styled.form`
   }
 `;
 
-export const FormButton = styled(Button)``;
+export const FormButton = styled(Button)`
+  font-size: 1.5rem;
+`;

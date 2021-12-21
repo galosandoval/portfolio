@@ -40,7 +40,4 @@ export const AboutButton = styled(Button).attrs(() => ({
   height: 4rem;
   box-shadow: 18px 18px 20px ${({ theme }) => theme.shadowDark},
     -18px -18px 20px ${({ theme }) => theme.shadowLight};
-
-  &:hover {
-  }
 `;

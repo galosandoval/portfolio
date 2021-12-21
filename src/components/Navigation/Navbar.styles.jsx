@@ -1,7 +1,9 @@
 import styled from "styled-components/macro";
 import { flexCenter } from "../../styles/utility";
 
-export const NavbarStyles = styled.ul`
+export const NavbarStyles = styled.ul.attrs(() => ({
+  id: "nav"
+}))`
   display: flex;
   justify-content: space-between;
   align-items: center;

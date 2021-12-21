@@ -98,6 +98,7 @@ export const Tech = styled.div`
   position: absolute;
   display: flex;
   justify-content: space-between;
+  font-size: 1.5rem;
 
   div {
     display: flex;
@@ -110,17 +111,15 @@ export const Tech = styled.div`
     & svg {
       background-color: ${({ theme }) => theme.tertiary};
     }
-
-    & p {
-    }
   }
 `;
 
 export const Tag = styled.p`
   position: absolute;
   z-index: -1;
-  opacity: ${(p) => (p.transform ? 1 : 0)};
-  transform: ${(p) => (p.transform ? "translateY(300%)" : "translateY(0)")};
+  opacity: ${(p) => (p.move ? 1 : 0)};
+  transform: ${(p) => (p.move ? "translateY(300%)" : "translateY(0)")};
   transition: all 0.5s 0.5s ease;
   width: max-content;
+  font-size: 1rem;
 `;

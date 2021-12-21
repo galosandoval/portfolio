@@ -252,3 +252,14 @@ export const fileSVG = (
     <polyline points="13 2 13 9 20 9"></polyline>
   </SVG>
 );
+
+/**
+ * Scroll to top
+ */
+
+export const upArrowSVG = (
+  <SVG sw={2} size={3}>
+    <line x1="12" y1="19" x2="12" y2="5"></line>
+    <polyline points="5 12 12 5 19 12"></polyline>
+  </SVG>
+);
