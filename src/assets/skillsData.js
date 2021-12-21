@@ -38,19 +38,13 @@ export const stack = [
   }
 ];
 
-const styledComponents = (
-  <>
-    Styled<br></br>Components
-  </>
-);
-
 export const frontend = [
   { name: "JavaScript", icon: JavascriptSVG },
   { name: "HTML5", icon: htmlSVG },
   { name: "CSS3", icon: cssSVG },
   { name: "React.js", icon: reactSVG },
   { name: "SCSS", icon: sassSVG },
-  { name: styledComponents, icon: styledSVG }
+  { name: "Styled-Components", icon: styledSVG }
 ];
 export const backend = [
   { name: "Node.js", icon: nodeSVG },
