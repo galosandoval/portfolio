@@ -3,7 +3,8 @@ import { flexCenter } from "../../styles/utility";
 import { NavA, NavbarStyles } from "../Navigation/Navbar.styles";
 
 export const FooterStyles = styled.footer`
-  background-color: ${({ theme }) => theme.secondary};
+  background-color: ${({ theme }) => theme.grey};
+  color: ${({ theme }) => theme.primary};
   ${flexCenter}
   width: 100%;
   padding: 10rem 0;
@@ -13,10 +14,6 @@ export const FooterStyles = styled.footer`
 export const IconContainer = styled(NavbarStyles)`
   justify-content: center;
   width: revert;
-
-  svg {
-    color: ${({ theme }) => theme.body};
-  }
 `;
 
 export const FooterLink = styled(NavA)`
@@ -25,10 +22,11 @@ export const FooterLink = styled(NavA)`
 
   svg {
     transition: all 0.3s ease;
+    color: ${({ theme }) => theme.primary};
   }
 
   svg:hover {
-    color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.body};
   }
   &:hover {
     transform: translateY(-3px);
@@ -37,7 +35,6 @@ export const FooterLink = styled(NavA)`
 `;
 
 export const Legal = styled.div`
-  color: ${({ theme }) => theme.body};
   ${flexCenter}
   flex-direction: column;
   justify-content: center;
@@ -47,7 +44,7 @@ export const Legal = styled.div`
     transition: all 0.3s ease;
 
     &:hover {
-      color: ${({ theme }) => theme.primary};
+      color: ${({ theme }) => theme.body};
     }
   }
 `;

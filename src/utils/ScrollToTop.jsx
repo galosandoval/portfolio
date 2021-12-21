@@ -8,7 +8,7 @@ const RoundButton = styled.a`
   position: fixed;
   right: 4rem;
   bottom: 4rem;
-  background-color: ${({ theme }) => theme.body};
+  background: rgba(${({ theme }) => theme.body}, 0.5);
   color: ${({ theme }) => theme.primary};
   border-radius: 50%;
   padding: 0.7rem;
@@ -20,6 +20,7 @@ const RoundButton = styled.a`
   height: 4.5rem;
   width: 4.5rem;
   ${flexCenter}
+  backdrop-filter: blur(2px);
 
   &:hover {
     transform: translateY(-3px);

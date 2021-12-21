@@ -28,7 +28,7 @@ const Footer = () => {
         <div>
           <p>
             <a href="https://github.com/galosandoval/portfolio" target="_blank" rel="noreferrer">
-              import * from "./galo_sandoval
+              import * from "./galo_sandoval"
             </a>
           </p>
           <p>
