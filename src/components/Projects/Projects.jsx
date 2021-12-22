@@ -32,15 +32,24 @@ const Projects = () => {
                   </ListItem>
                 ))}
               </List>
+              <SubTitle>Highlights</SubTitle>
+              <List>
+                {project.highlights.map((h) => (
+                  <ListItem key={h}>
+                    <span>{checkSVG}</span>
+                    {h}
+                  </ListItem>
+                ))}
+              </List>
             </Stack>
             <VideoContainer>
               <img src={project.video} alt={project.name} />
+              <ButtonContainer>
+                <ProjectButton href={project.github}>{codeSVG}</ProjectButton>
+                {project.web && <ProjectButton href={project.web}>{webSVG}</ProjectButton>}
+              </ButtonContainer>
             </VideoContainer>
           </ProjectContent>
-          <ButtonContainer>
-            <ProjectButton href={project.github}>{codeSVG}</ProjectButton>
-            {project.web && <ProjectButton href={project.web}>{webSVG}</ProjectButton>}
-          </ButtonContainer>
         </ProjectContainer>
       ))}
     </ProjectStyles>

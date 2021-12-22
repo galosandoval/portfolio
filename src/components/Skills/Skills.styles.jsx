@@ -1,6 +1,5 @@
 import styled from "styled-components/macro";
 import { flex, flexCenter } from "../../styles/utility";
-import { colorPrimaryLight } from "../../styles/GlobalVariables";
 
 export const SkillsStyles = styled.section.attrs(() => ({
   id: "skills"
@@ -62,7 +61,7 @@ export const Slice = styled.div.attrs((p) => ({
   }
 
   &:hover {
-    background-color: hsl(${colorPrimaryLight});
+    background-color: ${({ theme }) => theme.tertiary};
     /* color */
   }
 
