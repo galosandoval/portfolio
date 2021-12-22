@@ -56,6 +56,7 @@ export const ButtonContainer = styled.div`
   justify-content: space-evenly;
   padding: 2rem 0;
   align-items: center;
+  gap: 4rem;
 `;
 
 export const ProjectButton = styled(Button).attrs((p) => ({
@@ -68,6 +69,7 @@ export const VideoContainer = styled.div`
   ${flexCenter}
   padding: 2rem 1rem;
   flex: 0 0 50%;
+  flex-direction: column;
 
   img {
     border-radius: 5px;

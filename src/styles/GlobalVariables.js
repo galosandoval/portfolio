@@ -60,7 +60,7 @@ export const colorSecondaryLight = "198 4% 55%";
 export const colorTertiaryLight = "355 73% 97%";
 export const colorPrimaryDark = "4 21% 74%";
 export const colorSecondaryDark = "218, 4%, 42%";
-export const colorTertiaryDark = "4 21% 74%";
+export const colorTertiaryDark = "200 67% 55%";
 
 export const colorBackgroundFontLight = "203 5% 66%";
 

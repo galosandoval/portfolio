@@ -34,9 +34,11 @@ export const ContactForm = styled.form`
     padding: 0.5rem 1rem;
     color: ${({ theme }) => theme.body};
     border: 2px solid ${({ theme }) => theme.secondary};
+    box-shadow: 0 1px 2px ${({ theme }) => theme.body};
 
     &:focus-within {
-      border: 2px solid ${({ theme }) => theme.primary};
+      border: 3px solid ${({ theme }) => theme.tertiary};
+      box-shadow: 0 1px 2px ${({ theme }) => theme.tertiary};
     }
 
     input {

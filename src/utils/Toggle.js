@@ -24,7 +24,6 @@ export const Toggle = styled.button`
     width: 2rem;
     position: absolute;
     border-radius: 50%;
-    /* border: 2px solid ${({ theme }) => theme.secondary}; */
     transform: ${({ theme }) => theme.mode};
     background-color: transparent;
     transition: 0.5s ease transform;
