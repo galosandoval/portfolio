@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { pauseSVG, playSVG } from "../../assets/svgs";
-import { Frame, VideoButton, VideoContainer } from "./Projects.styles";
+import { Frame, ThemeImage, VideoButton, VideoContainer } from "./Projects.styles";
 
 const ProjectVideo = ({ project }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -17,12 +17,20 @@ const ProjectVideo = ({ project }) => {
   };
   return (
     <Frame>
-      <VideoContainer>
-        <VideoButton name={project.id} onClick={handlePlay}>
-          {isPlaying ? pauseSVG : playSVG}
-        </VideoButton>
-        <video id={project.id} src={project.video} alt={project.name} />
-      </VideoContainer>
+      {project.hasScreenShots ? ( // <ImgContainer>
+        //   <img src={portfolioSideA} alt="screen shot of portfolio dark mode" />
+        //   <img src={portfolioSideB} alt="screen shot of portfolio light mode" />
+        // </ImgContainer>
+
+        <ThemeImage />
+      ) : (
+        <VideoContainer>
+          <VideoButton name={project.id} onClick={handlePlay}>
+            {isPlaying ? pauseSVG : playSVG}
+          </VideoButton>
+          <video id={project.id} src={project.video} alt={project.name} />
+        </VideoContainer>
+      )}
     </Frame>
   );
 };

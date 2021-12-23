@@ -65,6 +65,18 @@ export const ProjectButton = styled(Button).attrs((p) => ({
   rel: "noreferrer"
 }))``;
 
+/**
+ * Project Video
+ */
+
+export const Frame = styled.div`
+  ${flexCenter}
+  background: ${({ theme }) => theme.body};
+  box-shadow: inset 18px 18px 30px ${({ theme }) => theme.shadowDark},
+    inset -18px -18px 30px ${({ theme }) => theme.shadowLight};
+  border-radius: 10px;
+`;
+
 export const VideoContainer = styled.div`
   ${flexCenter}
   padding: 3rem 3rem;
@@ -87,12 +99,19 @@ export const VideoContainer = styled.div`
   }
 `;
 
-export const Frame = styled.div`
+export const ImgContainer = styled.div`
   ${flexCenter}
-  background: ${({ theme }) => theme.body};
-  box-shadow: inset 18px 18px 30px ${({ theme }) => theme.shadowDark},
-    inset -18px -18px 30px ${({ theme }) => theme.shadowLight};
-  border-radius: 10px;
+  flex: 0 0 50%;
+  img {
+    height: 23.8rem;
+  }
+`;
+
+export const ThemeImage = styled.div`
+  background-size: contain;
+  background-image: url(${({ theme }) => theme.image});
+  height: 26rem;
+  width: 50rem;
 `;
 
 export const VideoButton = styled.button`

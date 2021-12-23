@@ -1,5 +1,6 @@
 import listy from "../assets/listy-video.mp4";
 import breathing from "../assets/breathing-video.mp4";
+import miscProjects from "../assets/misc-projects.mp4";
 
 export const projects = [
   {
@@ -42,18 +43,28 @@ export const projects = [
     highlights: ["Debounce", "Dark Mode", "Planned using Figma"],
     description:
       "Made using figma to make wireframes, to plan out components, colors, and layout. Yes, it's the site you're currently on.",
-    // video: listy,
+    video: null,
     web: null,
-    github: "https://github.com/galosandoval"
+    github: "https://github.com/galosandoval",
+    hasScreenShots: true
   },
   {
     id: "misc-projects",
     name: "Misc Projects",
-    stack: ["Java", "Docker", "SCSS", "Styled-Components", "Redux", "Angular", "Python"],
-    highlights: ["AWS"],
+    stack: [
+      "Java",
+      "Docker",
+      "SCSS",
+      "Styled-Components",
+      "Redux",
+      "Angular",
+      "Python",
+      "Firebase"
+    ],
+    highlights: ["AWS Certificate", "Badges from IBM"],
     description:
       "Variety of small projects I've worked on from courses with my apprenticeship at IBM or a technology I wanted to learn on the side.",
-    // video: listy,
+    video: miscProjects,
     web: null,
     github: "https://github.com/galosandoval",
     reverse: true

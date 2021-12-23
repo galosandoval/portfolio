@@ -12,6 +12,8 @@ import {
   colorWhite,
   colorTertiaryDark
 } from "./GlobalVariables";
+import portfolioSideA from "../assets/dark-theme.png";
+import portfolioSideB from "../assets/light-theme.png";
 
 export const lightTheme = {
   body: `hsl(${colorWhite})`,
@@ -21,7 +23,8 @@ export const lightTheme = {
   grey: `hsl(${colorSecondaryLight})`,
   shadowLight: `hsl(${colorShadowLightWhite})`,
   shadowDark: `hsl(${colorShadowDarkWhite})`,
-  mode: "translateX(-44%)"
+  mode: "translateX(-44%)",
+  image: portfolioSideB
 };
 export const darkTheme = {
   body: `hsl(${colorBlack})`, // gunmetal
@@ -31,5 +34,6 @@ export const darkTheme = {
   tertiary: `hsl(${colorTertiaryDark})`, // Dim gray
   shadowLight: `hsl(${colorShadowLightBlack})`,
   shadowDark: `hsl(${colorShadowDarkBlack})`,
-  mode: "translateX(44%)"
+  mode: "translateX(44%)",
+  image: portfolioSideA
 };
