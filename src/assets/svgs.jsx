@@ -12,6 +12,7 @@ const SVG = styled.svg.attrs((p) => ({
   height: ${(p) => p.size}rem;
   width: ${(p) => p.size}rem;
   position: relative;
+  margin-right: ${(p) => (p.mr ? p.mr + "rem" : "none")};
 `;
 
 // by Icon by Raj Dev on freeicons.io
@@ -109,6 +110,19 @@ export const webSVG = (
     <circle cx="12" cy="12" r="10"></circle>
     <line x1="2" y1="12" x2="22" y2="12"></line>
     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+  </SVG>
+);
+
+export const playSVG = (
+  <SVG size={2} mr={-0.3}>
+    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+  </SVG>
+);
+
+export const pauseSVG = (
+  <SVG size={2}>
+    <rect x="6" y="4" width="4" height="16"></rect>
+    <rect x="14" y="4" width="4" height="16"></rect>
   </SVG>
 );
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
 import { upArrowSVG } from "../assets/svgs";
-import { debounce } from "../styles/debounce";
+import { debounce } from "./debounce";
 import { flexCenter } from "../styles/utility";
 
 const RoundButton = styled.a`

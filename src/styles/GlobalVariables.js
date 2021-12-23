@@ -53,11 +53,13 @@ export const GlobalVariables = createGlobalStyle`
 `;
 
 export const colorWhite = "206 23% 94%";
+
 export const colorBlack = "213 10% 18%";
 
 export const colorPrimaryLight = "47 81% 56%";
 export const colorSecondaryLight = "198 4% 55%";
 export const colorTertiaryLight = "355 73% 97%";
+
 export const colorPrimaryDark = "4 21% 74%";
 export const colorSecondaryDark = "218, 4%, 42%";
 export const colorTertiaryDark = "200 67% 55%";

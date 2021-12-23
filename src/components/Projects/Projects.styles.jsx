@@ -20,7 +20,8 @@ export const ProjectContent = styled.div`
 export const Stack = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 1rem;
+  padding: 0 1rem;
 
   p {
     padding: 1rem;
@@ -34,7 +35,6 @@ export const List = styled.ul`
   margin-left: 4rem;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 10rem;
 `;
 
 export const ListItem = styled.li`
@@ -65,13 +65,68 @@ export const ProjectButton = styled(Button).attrs((p) => ({
   rel: "noreferrer"
 }))``;
 
+/**
+ * Project Video
+ */
+
+export const Frame = styled.div`
+  ${flexCenter}
+  background: ${({ theme }) => theme.body};
+  box-shadow: inset 18px 18px 30px ${({ theme }) => theme.shadowDark},
+    inset -18px -18px 30px ${({ theme }) => theme.shadowLight};
+  border-radius: 10px;
+`;
+
 export const VideoContainer = styled.div`
   ${flexCenter}
-  padding: 2rem 1rem;
+  padding: 3rem 3rem;
   flex: 0 0 50%;
   flex-direction: column;
+  position: relative;
 
-  img {
+  video {
     border-radius: 5px;
+    position: relative;
   }
+
+  &:hover button {
+    opacity: 0.9;
+    transform: translateY(0);
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+`;
+
+export const ImgContainer = styled.div`
+  ${flexCenter}
+  flex: 0 0 50%;
+  img {
+    height: 23.8rem;
+  }
+`;
+
+export const ThemeImage = styled.div`
+  background-size: contain;
+  background-image: url(${({ theme }) => theme.image});
+  height: 26rem;
+  width: 50rem;
+`;
+
+export const VideoButton = styled.button`
+  position: absolute;
+  bottom: 4.5rem;
+  right: 4rem;
+  z-index: 2;
+  background-color: ${({ theme }) => theme.primary};
+  border-radius: 50%;
+  padding: 0.5rem;
+  height: 3.3rem;
+  width: 3.3rem;
+  ${flexCenter}
+  box-shadow: 0 .1rem .2rem black;
+  opacity: 0;
+  transform: translateY(10%);
+  transition: transform ease 0.3s, opacity ease 0.3s, transform 0.1s ease;
 `;
