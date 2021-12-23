@@ -7,12 +7,12 @@ import {
   Stack,
   ButtonContainer,
   ProjectButton,
-  VideoContainer,
   ListItem,
   List
 } from "./Projects.styles.jsx";
 import { SubTitle, Title } from "../../styles/shared.jsx";
 import { projects } from "../../assets/projectsData.js";
+import ProjectVideo from "./ProjectVideo.jsx";
 
 const Projects = () => {
   return (
@@ -42,13 +42,13 @@ const Projects = () => {
                 ))}
               </List>
             </Stack>
-            <VideoContainer>
-              <img src={project.video} alt={project.name} />
+            <div>
+              <ProjectVideo project={project} />
               <ButtonContainer>
                 <ProjectButton href={project.github}>{codeSVG}</ProjectButton>
                 {project.web && <ProjectButton href={project.web}>{webSVG}</ProjectButton>}
               </ButtonContainer>
-            </VideoContainer>
+            </div>
           </ProjectContent>
         </ProjectContainer>
       ))}

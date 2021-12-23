@@ -55,15 +55,33 @@ const ContactMe = () => {
           <Title>Let's Chat</Title>
           <label>
             Name
-            <input type="text" name="from_name" value={toSend.from_name} onChange={handleChange} />
+            <input
+              required
+              type="text"
+              name="from_name"
+              value={toSend.from_name}
+              onChange={handleChange}
+            />
           </label>
           <label htmlFor="email">
             Email
-            <input type="text" name="reply_to" value={toSend.reply_to} onChange={handleChange} />
+            <input
+              required
+              type="email"
+              name="reply_to"
+              value={toSend.reply_to}
+              onChange={handleChange}
+            />
           </label>
           <label htmlFor="message">
             Message
-            <input type="text" name="message" value={toSend.message} onChange={handleChange} />
+            <input
+              required
+              type="text"
+              name="message"
+              value={toSend.message}
+              onChange={handleChange}
+            />
           </label>
           <FormButton as="button">
             {isError
