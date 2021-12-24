@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 import resume from "../../assets/resume.pdf";
 import { FromLeftAnimation, FromRightAnimation } from "../../styles/animation";
+import { device } from "../../styles/mediaQueries";
 import { Button, Container } from "../../styles/shared";
 
 export const AboutMeStyles = styled.div.attrs(() => ({
@@ -15,6 +16,10 @@ export const RedAbout = styled(Container)`
   font-weight: 400;
   flex-direction: row;
   margin: 5rem 0;
+
+  @media ${device.tabLand} {
+    flex-direction: column;
+  }
 `;
 
 export const MeImg = styled.img`

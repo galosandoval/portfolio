@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import { FromLeftAnimation, FromRightAnimation } from "../../styles/animation";
+import { device } from "../../styles/mediaQueries";
 import { flex, flexCenter } from "../../styles/utility";
 
 export const SkillsStyles = styled.section.attrs(() => ({
@@ -12,6 +13,10 @@ export const SkillsStyles = styled.section.attrs(() => ({
 
   &:hover div > div > div:not(:first-child) {
     margin-bottom: 0rem;
+  }
+
+  @media ${device.tabLand} {
+    flex-direction: column;
   }
 `;
 
@@ -92,6 +97,10 @@ export const Info = styled.article`
   position: relative;
 
   ${FromRightAnimation}
+
+  @media ${device.tabLand} {
+    margin-top: 25rem 0;
+  }
 `;
 
 export const Tech = styled.div`

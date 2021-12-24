@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import { FromLeftAnimation, FromRightAnimation, FromTopAnimation } from "../../styles/animation";
+import { device } from "../../styles/mediaQueries";
 import { Button, Container, Title } from "../../styles/shared";
 import { flexCenter } from "../../styles/utility";
 
@@ -20,6 +21,10 @@ export const ProjectTitle = styled(Title)`
 export const ProjectContent = styled.div`
   display: flex;
   flex-direction: ${(p) => (p.reverse ? "row-reverse" : "row")};
+
+  @media ${device.tabLand} {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const Stack = styled.div`
