@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { device } from "../../styles/mediaQueries";
 import { Navigation } from "../../styles/shared";
 import { flexCenter } from "../../styles/utility";
 import { NavA } from "../Navigation/Navbar.styles";
@@ -10,6 +11,10 @@ export const FooterStyles = styled.footer`
   width: 100%;
   padding: 10rem 0;
   justify-content: space-evenly;
+
+  @media ${device.phone} {
+    flex-direction: column;
+  }
 `;
 
 export const IconContainer = styled(Navigation)`

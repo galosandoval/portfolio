@@ -59,5 +59,6 @@ body {
     transition: all 0.50s linear;
     font-weight: 400;
     line-height: 1.3;
+
   }
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { backend, frontend, stack, tools } from "../../assets/skillsData.js";
 import { useObserver } from "../../utils/useObserver.js";
 import {
@@ -21,6 +21,7 @@ const initialState = {
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(initialState);
+  const skillsRef = useRef(null);
   const [stackRef, stackIsVisible] = useObserver();
   const [infoRef, infoIsVisible] = useObserver();
 
@@ -39,7 +40,7 @@ const Skills = () => {
   };
 
   return (
-    <SkillsStyles>
+    <SkillsStyles ref={skillsRef}>
       <StackContainer ref={stackRef} isVisible={stackIsVisible}>
         <Stack>
           {stack.map((s) => (
@@ -58,7 +59,16 @@ const Skills = () => {
       </StackContainer>
       <Info ref={infoRef} isVisible={infoIsVisible}>
         <Tech isVisible={isVisible.info} as="p">
-          Wanna see some skills? <br></br> Hover over a piece of the stack on the left.
+          {skillsRef.current && skillsRef.current.clientWidth < 1199.98 ? (
+            <>
+              Wanna see some skills?<br></br>Tap a piece of the stack above.
+            </>
+          ) : (
+            <>
+              Wanna see some skills?<br></br>
+              Hover over a piece of the stack to the left.
+            </>
+          )}
         </Tech>
         <Tech isVisible={isVisible.frontend}>
           {frontend.map((tech) => (

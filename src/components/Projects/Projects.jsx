@@ -10,7 +10,8 @@ import {
   ListItem,
   List,
   MediaContainer,
-  ProjectTitle
+  ProjectTitle,
+  ListContainer
 } from "./Projects.styles.jsx";
 import { SubTitle } from "../../styles/shared.jsx";
 import { projects } from "../../assets/projectsData.js";
@@ -49,24 +50,26 @@ const Projects = () => {
           <ProjectContent reverse={project.reverse}>
             <Stack ref={stackRefs[index]} isVisible={stackIsVisible[index]}>
               <p>{project.description}</p>
-              <SubTitle>Stack</SubTitle>
-              <List>
-                {project.stack.map((s) => (
-                  <ListItem key={s}>
-                    <span>{checkSVG}</span>
-                    {s}
-                  </ListItem>
-                ))}
-              </List>
-              <SubTitle>Highlights</SubTitle>
-              <List>
-                {project.highlights.map((h) => (
-                  <ListItem key={h}>
-                    <span>{checkSVG}</span>
-                    {h}
-                  </ListItem>
-                ))}
-              </List>
+              <ListContainer>
+                <List>
+                  <SubTitle>Stack</SubTitle>
+                  {project.stack.map((s) => (
+                    <ListItem key={s}>
+                      <span>{checkSVG}</span>
+                      {s}
+                    </ListItem>
+                  ))}
+                </List>
+                <List>
+                  <SubTitle>Highlights</SubTitle>
+                  {project.highlights.map((h) => (
+                    <ListItem key={h}>
+                      <span>{checkSVG}</span>
+                      {h}
+                    </ListItem>
+                  ))}
+                </List>
+              </ListContainer>
             </Stack>
             <MediaContainer ref={videoRefs[index]} isVisible={videoIsVisible[index]}>
               <ProjectVideo project={project} />

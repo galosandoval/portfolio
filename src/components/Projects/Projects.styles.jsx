@@ -12,10 +12,19 @@ export const ProjectStyles = styled.div.attrs(() => ({
 
 export const ProjectContainer = styled(Container)`
   padding: 5rem 0;
+
+  @media ${device.phone} {
+    padding: 1.5rem 0;
+  }
 `;
 
 export const ProjectTitle = styled(Title)`
   ${FromTopAnimation}
+
+  @media ${device.phone} {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
 `;
 
 export const ProjectContent = styled.div`
@@ -33,23 +42,31 @@ export const Stack = styled.div`
   gap: 1rem;
   padding: 0 1rem;
   ${FromLeftAnimation}
+  font-size: 1.2rem;
 
   p {
     padding: 1rem;
     font-style: italic;
   }
+  @media ${device.phone} {
+    font-size: 1.4rem;
+  }
+`;
+
+export const ListContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
 `;
 
 export const List = styled.ul`
   padding: 1rem;
   display: flex;
-  margin-left: 4rem;
   flex-direction: column;
   flex-wrap: wrap;
 `;
 
 export const ListItem = styled.li`
-  width: 50%;
+  width: 100%;
   display: flex;
   align-items: flex-start;
 
@@ -73,6 +90,13 @@ export const ButtonContainer = styled.div`
   padding: 2rem 0;
   align-items: center;
   gap: 4rem;
+
+  @media ${device.phone} {
+    padding: 0;
+    margin-top: -1rem;
+    flex-direction: column;
+    gap: 1.7rem;
+  }
 `;
 
 export const ProjectButton = styled(Button).attrs((p) => ({
@@ -91,6 +115,10 @@ export const Frame = styled.div`
   box-shadow: inset 18px 18px 30px ${({ theme }) => theme.shadowDark},
     inset -18px -18px 30px ${({ theme }) => theme.shadowLight};
   border-radius: 10px;
+
+  @media ${device.tabPort} {
+    box-shadow: none;
+  }
 `;
 
 export const VideoContainer = styled.div`
@@ -103,15 +131,39 @@ export const VideoContainer = styled.div`
   video {
     border-radius: 5px;
     position: relative;
+
+    @media ${device.tabLand} {
+      width: 42rem;
+    }
+    @media ${device.tabPort} {
+      border: 2px solid ${({ theme }) => theme.secondary};
+    }
+    @media ${device.phone} {
+      border: none;
+      height: 12rem;
+      width: 25rem;
+    }
   }
 
   &:hover button {
-    opacity: 0.9;
+    opacity: 0.85;
     transform: translateY(0);
 
     &:active {
       transform: translateY(1px);
     }
+  }
+
+  @media ${device.tabLand} {
+    button {
+      opacity: 0.85;
+      transform: translateY(0);
+      padding: 0;
+    }
+  }
+
+  @media ${device.phone} {
+    width: 100%;
   }
 `;
 
@@ -120,6 +172,7 @@ export const ImgContainer = styled.div`
   flex: 0 0 50%;
   img {
     height: 23.8rem;
+    border: 2px solid ${({ theme }) => theme.secondary};
   }
 `;
 
@@ -128,6 +181,16 @@ export const ThemeImage = styled.div`
   background-image: url(${({ theme }) => theme.image});
   height: 26rem;
   width: 50rem;
+  background-repeat: no-repeat;
+  margin: 3rem;
+
+  @media ${device.tabPort} {
+    height: 20rem;
+    margin: 0;
+  }
+  @media ${device.phone} {
+    height: 14rem;
+  }
 `;
 
 export const VideoButton = styled.button`
@@ -145,4 +208,11 @@ export const VideoButton = styled.button`
   opacity: 0;
   transform: translateY(10%);
   transition: transform ease 0.3s, opacity ease 0.3s, transform 0.1s ease;
+
+  @media ${device.phone} {
+    right: 1.5rem;
+    bottom: 6rem;
+    height: 6rem;
+    width: 6rem;
+  }
 `;

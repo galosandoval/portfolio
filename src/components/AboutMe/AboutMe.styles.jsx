@@ -37,6 +37,13 @@ export const Content = styled.article`
   gap: 1rem;
   padding: 4rem 5rem 2rem 5rem;
   ${FromRightAnimation}
+
+  @media ${device.tabPort} {
+    font-size: 1.4rem;
+  }
+  @media ${device.phone} {
+    padding: 2rem;
+  }
 `;
 
 export const AboutButton = styled(Button).attrs(() => ({
@@ -49,4 +56,10 @@ export const AboutButton = styled(Button).attrs(() => ({
   height: 4rem;
   box-shadow: 18px 18px 20px ${({ theme }) => theme.shadowDark},
     -18px -18px 20px ${({ theme }) => theme.shadowLight};
+
+  @media ${device.tabPort} {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 3rem 0;
+  }
 `;

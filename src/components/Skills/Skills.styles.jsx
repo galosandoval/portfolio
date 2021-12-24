@@ -28,6 +28,10 @@ export const StackContainer = styled.div`
   align-self: center;
 
   ${FromLeftAnimation}
+
+  @media ${device.tabLand} {
+    padding-top: 7rem;
+  }
 `;
 
 export const Stack = styled.div`
@@ -77,6 +81,13 @@ export const Slice = styled.div.attrs((p) => ({
     transform: skew(-165deg, -165deg) rotate(-45deg) translateX(${(p) => p.move}%);
     z-index: -1;
     opacity: 1;
+
+    @media ${device.phone} {
+      transform: ${(p) =>
+        p.move
+          ? "skew(-165deg, -165deg) rotate(-45deg) translateX(110%)"
+          : "skew(-165deg, -165deg) rotate(-45deg) translateX(0)"};
+    }
   }
 `;
 
@@ -99,7 +110,10 @@ export const Info = styled.article`
   ${FromRightAnimation}
 
   @media ${device.tabLand} {
-    margin-top: 25rem 0;
+    margin-top: 20rem;
+  }
+  @media ${device.phone} {
+    padding-bottom: 7rem;
   }
 `;
 
@@ -110,8 +124,17 @@ export const Tech = styled.div`
   visibility: ${(p) => (p.isVisible ? "visible" : "hidden")};
   position: absolute;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   font-size: 1.5rem;
+
+  @media ${device.tabPort} {
+    font-size: 1.7rem;
+  }
+  @media ${device.phone} {
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 7rem;
+  }
 
   div {
     display: flex;

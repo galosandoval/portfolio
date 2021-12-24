@@ -1,6 +1,6 @@
-import React, { lazy, Suspense } from "react";
-import styled from "styled-components/macro";
-import { ThemeProvider } from "styled-components";
+import React, { lazy, Suspense, useRef, useState } from "react";
+import styled, { ThemeProvider } from "styled-components/macro";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 import Landing from "./Landing/Landing";
 import Navbar from "./Navigation/Navbar";
@@ -10,6 +10,8 @@ import { GlobalStyle } from "../styles/globalStyles";
 import { useDarkMode } from "../utils/useDarkMode";
 import { GlobalVariables } from "../styles/GlobalVariables";
 import { flexCenter } from "../styles/utility";
+import { device } from "../styles/mediaQueries";
+import { closeSVG, navSVG } from "../assets/svgs";
 const Skills = lazy(() => import("./Skills/Skills"));
 const ContactMe = lazy(() => import("./ContactMe/ContactMe"));
 const Footer = lazy(() => import("./Footer/Footer"));
@@ -22,18 +24,45 @@ const AppStyles = styled.main`
   overflow: hidden;
 `;
 
+export const NavButton = styled.button`
+  display: none;
+  @media ${device.phone} {
+    display: block;
+    align-self: flex-end;
+    padding: 1rem;
+    position: relative;
+    z-index: 99999;
+  }
+`;
+
 function App() {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
+  const navRef = useRef(null);
+  const [navIsVisible, setNavIsVisible] = useState(false);
 
+  console.log(navRef.current);
   if (!mountedComponent) return <div />;
+
+  const handleShowNav = () => {
+    const nav = document.querySelector("#nav");
+    console.log({ nav });
+    if (navIsVisible) {
+      enableBodyScroll(nav);
+      setNavIsVisible(false);
+    } else {
+      disableBodyScroll(nav);
+      setNavIsVisible(true);
+    }
+  };
 
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
       <GlobalVariables />
-      <AppStyles>
-        <Navbar theme={theme} themeToggler={themeToggler} />
+      <AppStyles id="top" ref={navRef}>
+        <NavButton onClick={handleShowNav}>{navIsVisible ? closeSVG : navSVG}</NavButton>
+        <Navbar handleShowNav={handleShowNav} theme={theme} themeToggler={themeToggler} navIsVisible={navIsVisible} />
         <Landing />
         <ScrollToTop />
         <Suspense fallback={<div>Loading...</div>}>
