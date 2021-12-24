@@ -24,6 +24,7 @@ const RoundButton = styled.a`
   ${flexCenter}
   backdrop-filter: blur(2px);
   ${FromRightAnimation}
+  z-index: 9999;
 
   &:hover {
     transform: translateY(-3px);
