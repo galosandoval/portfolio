@@ -28,6 +28,10 @@ export const StackContainer = styled.div`
   align-self: center;
 
   ${FromLeftAnimation}
+
+  @media ${device.tabLand} {
+    padding-top: 7rem;
+  }
 `;
 
 export const Stack = styled.div`
@@ -99,7 +103,10 @@ export const Info = styled.article`
   ${FromRightAnimation}
 
   @media ${device.tabLand} {
-    margin-top: 25rem 0;
+    margin-top: 20rem;
+  }
+  @media ${device.phone} {
+    padding-bottom: 7rem;
   }
 `;
 
@@ -112,6 +119,15 @@ export const Tech = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 1.5rem;
+
+  @media ${device.tabPort} {
+    font-size: 1.7rem;
+  }
+  @media ${device.phone} {
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 7rem;
+  }
 
   div {
     display: flex;

@@ -1,7 +1,9 @@
 import styled from "styled-components/macro";
 import { FromTopAnimation } from "../../styles/animation";
+import { device } from "../../styles/mediaQueries";
 import { Navigation } from "../../styles/shared";
 import { flexCenter } from "../../styles/utility";
+
 
 export const NavbarStyles = styled(Navigation).attrs(() => ({
   id: "nav"
@@ -11,6 +13,18 @@ export const NavbarStyles = styled(Navigation).attrs(() => ({
   width: 88%;
   margin-top: 1rem;
   ${FromTopAnimation}
+
+  @media ${device.tabPort} {
+    width: revert;
+  }
+  @media ${device.phone} {
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    background: ${({ theme }) => theme.body};
+    z-index: 99999;
+    transform: ${(p) => (p.navIsVisible ? "translateX(0)" : "translateX(105%)")};
+  }
 `;
 
 export const Item = styled.li`
@@ -28,6 +42,23 @@ export const Item = styled.li`
   &:hover > span {
     transform: translateY(330%);
     opacity: 1;
+
+    @media ${device.phone} {
+      transform: none;
+    }
+  }
+
+  @media ${device.tabLand} {
+    span {
+      transform: translateY(0);
+      opacity: 1;
+      position: relative;
+    }
+  }
+  @media ${device.phone} {
+    align-items: center;
+    width: 72%;
+    justify-content: flex-start;
   }
 `;
 

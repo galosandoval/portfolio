@@ -13,10 +13,11 @@ import { Toggle } from "../../utils/Toggle";
 import { useObserver } from "../../utils/useObserver.js";
 import { NavbarStyles, NavA, Item } from "./Navbar.styles.jsx";
 
-const Navbar = ({ theme, themeToggler }) => {
+const Navbar = ({ theme, themeToggler, navIsVisible }) => {
   const [containerRef, isVisible] = useObserver();
+
   return (
-    <NavbarStyles ref={containerRef} isVisible={isVisible}>
+    <NavbarStyles ref={containerRef} isVisible={isVisible} navIsVisible={navIsVisible}>
       <Item>
         <NavA href="#about">{aboutMeSVG}</NavA>
         <span>Me</span>

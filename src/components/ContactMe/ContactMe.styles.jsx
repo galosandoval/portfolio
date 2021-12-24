@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import { FromLeftAnimation, FromRightAnimation } from "../../styles/animation";
+import { device } from "../../styles/mediaQueries";
 import { Button, Container } from "../../styles/shared";
 import { flexCenter } from "../../styles/utility";
 
@@ -8,12 +9,20 @@ export const ContactMeStyles = styled.section.attrs(() => ({
 }))`
   width: 88%;
   margin: 7rem 0;
+
+  @media ${device.tabPort} {
+    font-size: 1.4rem;
+  }
 `;
 
 export const ContactMeContainer = styled(Container)`
   ${flexCenter}
   flex-direction: row;
   justify-content: space-evenly;
+
+  @media ${device.tabLand} {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const ContactImg = styled.img`
@@ -30,6 +39,10 @@ export const ContactForm = styled.form`
   gap: 2rem;
   width: 45%;
   ${FromLeftAnimation}
+
+  @media ${device.tabLand} {
+    width: 80%;
+  }
 
   label {
     display: flex;
