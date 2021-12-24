@@ -41,7 +41,6 @@ function App() {
   const navRef = useRef(null);
   const [navIsVisible, setNavIsVisible] = useState(false);
 
-  console.log(navRef.current);
   if (!mountedComponent) return <div />;
 
   const handleShowNav = () => {
