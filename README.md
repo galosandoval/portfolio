@@ -16,6 +16,7 @@ My goal was to simulate a professional work environment
 - I didn't use too much state management on this project so useState was my go to: https://github.com/galosandoval/portfolio/blob/main/src/components/Skills/Skills.jsx#L23
 - Responsive CSS using styled-components: https://github.com/galosandoval/portfolio/blob/main/src/components/Skills/Skills.styles.jsx#L133
 - Custom hooks include useDarkMode and UseObserver (Intersection Observer): https://github.com/galosandoval/portfolio/tree/main/src/utils
+- Uses debounce on the ScrollToTop button to consolidate scroll events: https://github.com/galosandoval/portfolio/blob/main/src/utils/ScrollToTop.jsx#L34
 
 ### Directory layout
 
