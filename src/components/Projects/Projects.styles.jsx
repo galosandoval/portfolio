@@ -94,6 +94,8 @@ export const ButtonContainer = styled.div`
   @media ${device.phone} {
     padding: 0;
     margin-top: -1rem;
+    flex-direction: column;
+    gap: 1.7rem;
   }
 `;
 
@@ -138,6 +140,8 @@ export const VideoContainer = styled.div`
     }
     @media ${device.phone} {
       border: none;
+      height: 12rem;
+      width: 25rem;
     }
   }
 

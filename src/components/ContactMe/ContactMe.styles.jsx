@@ -13,6 +13,9 @@ export const ContactMeStyles = styled.section.attrs(() => ({
   @media ${device.tabPort} {
     font-size: 1.4rem;
   }
+  @media ${device.phone} {
+    margin: 2rem 0;
+  }
 `;
 
 export const ContactMeContainer = styled(Container)`

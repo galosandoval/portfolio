@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import { FromLeftAnimation } from "../../styles/animation";
+import { device } from "../../styles/mediaQueries";
 import { Button } from "../../styles/shared";
 
 export const LandingStyles = styled.section`
@@ -10,6 +11,9 @@ export const LandingStyles = styled.section`
   height: 85vh;
   width: 83%;
   padding-top: 10rem;
+  @media ${device.phone} {
+    display: revert;
+  }
 `;
 
 export const Header = styled.div`
@@ -19,6 +23,14 @@ export const Header = styled.div`
   svg {
     height: 3.5rem;
     width: 3.5rem;
+  }
+
+  @media ${device.phone} {
+    font-size: 2.5rem;
+
+    h1 {
+      text-align: center;
+    }
   }
 `;
 

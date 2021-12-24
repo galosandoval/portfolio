@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { device } from "../styles/mediaQueries";
 import { flexCenter } from "../styles/utility";
 
 export const Toggle = styled.button`
@@ -31,6 +32,15 @@ export const Toggle = styled.button`
 
     svg {
       height: 1.7rem;
+    }
+  }
+
+  @media ${device.phone} {
+    height: 4.5rem;
+    width: 7rem;
+
+    span > svg {
+      height: 2rem;
     }
   }
 `;

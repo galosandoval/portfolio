@@ -13,38 +13,50 @@ import { Toggle } from "../../utils/Toggle";
 import { useObserver } from "../../utils/useObserver.js";
 import { NavbarStyles, NavA, Item } from "./Navbar.styles.jsx";
 
-const Navbar = ({ theme, themeToggler, navIsVisible }) => {
+const Navbar = ({ theme, themeToggler, navIsVisible, handleShowNav }) => {
   const [containerRef, isVisible] = useObserver();
 
   return (
     <NavbarStyles ref={containerRef} isVisible={isVisible} navIsVisible={navIsVisible}>
       <Item>
-        <NavA href="#about">{aboutMeSVG}</NavA>
-        <span>Me</span>
+        <NavA onClick={handleShowNav} href="#about">
+          {aboutMeSVG}
+          <span>Me</span>
+        </NavA>
       </Item>
       <Item>
-        <NavA href="#projects">{projectsSVG}</NavA>
-        <span>Projects</span>
+        <NavA onClick={handleShowNav} href="#projects">
+          {projectsSVG}
+          <span>Projects</span>
+        </NavA>
       </Item>
       <Item>
-        <NavA href="#skills">{stackSVG}</NavA>
-        <span>Stack</span>
+        <NavA onClick={handleShowNav} href="#skills">
+          {stackSVG}
+          <span>Stack</span>
+        </NavA>
       </Item>
       <Item>
-        <NavA href="#contact">{contactSVG}</NavA>
-        <span>Contact</span>
+        <NavA onClick={handleShowNav} href="#contact">
+          {contactSVG}
+          <span>Contact</span>
+        </NavA>
       </Item>
       <Item>
-        <NavA href="https://github.com/galosandoval" target="_blank">
+        <NavA onClick={handleShowNav} href="https://github.com/galosandoval" target="_blank">
           {githubSVG}
+          <span>Github</span>
         </NavA>
-        <span>Github</span>
       </Item>
       <Item>
-        <NavA href="https://www.linkedin.com/in/galo-sandoval/" target="_blank">
+        <NavA
+          onClick={handleShowNav}
+          href="https://www.linkedin.com/in/galo-sandoval/"
+          target="_blank"
+        >
           {linkedInSVG}
+          <span>LinkedIn</span>
         </NavA>
-        <span>LinkedIn</span>
       </Item>
       <li>
         <Toggle onClick={themeToggler}>

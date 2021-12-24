@@ -4,7 +4,6 @@ import { device } from "../../styles/mediaQueries";
 import { Navigation } from "../../styles/shared";
 import { flexCenter } from "../../styles/utility";
 
-
 export const NavbarStyles = styled(Navigation).attrs(() => ({
   id: "nav"
 }))`
@@ -22,8 +21,11 @@ export const NavbarStyles = styled(Navigation).attrs(() => ({
     position: fixed;
     inset: 0;
     background: ${({ theme }) => theme.body};
-    z-index: 99999;
+    z-index: 99998;
+    transition: transform 0.5s ease;
     transform: ${(p) => (p.navIsVisible ? "translateX(0)" : "translateX(105%)")};
+    margin: 0;
+    justify-content: space-around;
   }
 `;
 
@@ -39,7 +41,7 @@ export const Item = styled.li`
     transform: translateY(200%);
   }
 
-  &:hover > span {
+  &:hover > a > span {
     transform: translateY(330%);
     opacity: 1;
 
@@ -48,17 +50,16 @@ export const Item = styled.li`
     }
   }
 
-  @media ${device.tabLand} {
-    span {
+  @media ${device.phone} {
+    & > a > span {
       transform: translateY(0);
       opacity: 1;
       position: relative;
     }
-  }
-  @media ${device.phone} {
     align-items: center;
     width: 72%;
     justify-content: flex-start;
+    font-size: 1.3rem;
   }
 `;
 
@@ -78,5 +79,18 @@ export const NavA = styled.a.attrs((props) => ({
 
   &:hover {
     background-color: ${({ theme }) => theme.tertiary};
+
+    @media ${device.phone} {
+      background-color: transparent;
+    }
+  }
+  @media ${device.phone} {
+    justify-content: flex-start;
+    gap: 5rem;
+
+    svg {
+      height: 3.5rem;
+      width: 3.5rem;
+    }
   }
 `;

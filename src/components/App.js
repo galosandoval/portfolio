@@ -1,5 +1,7 @@
 import React, { lazy, Suspense, useRef, useState } from "react";
 import styled, { ThemeProvider } from "styled-components/macro";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+
 import Landing from "./Landing/Landing";
 import Navbar from "./Navigation/Navbar";
 import ScrollToTop from "../utils/ScrollToTop";
@@ -9,7 +11,7 @@ import { useDarkMode } from "../utils/useDarkMode";
 import { GlobalVariables } from "../styles/GlobalVariables";
 import { flexCenter } from "../styles/utility";
 import { device } from "../styles/mediaQueries";
-import { navSVG } from "../assets/svgs";
+import { closeSVG, navSVG } from "../assets/svgs";
 const Skills = lazy(() => import("./Skills/Skills"));
 const ContactMe = lazy(() => import("./ContactMe/ContactMe"));
 const Footer = lazy(() => import("./Footer/Footer"));
@@ -27,7 +29,9 @@ export const NavButton = styled.button`
   @media ${device.phone} {
     display: block;
     align-self: flex-end;
-    padding-right: 1rem;
+    padding: 1rem;
+    position: relative;
+    z-index: 99999;
   }
 `;
 
@@ -41,7 +45,15 @@ function App() {
   if (!mountedComponent) return <div />;
 
   const handleShowNav = () => {
-    navIsVisible ? setNavIsVisible(false) : setNavIsVisible(true);
+    const nav = document.querySelector("#nav");
+    console.log({ nav });
+    if (navIsVisible) {
+      enableBodyScroll(nav);
+      setNavIsVisible(false);
+    } else {
+      disableBodyScroll(nav);
+      setNavIsVisible(true);
+    }
   };
 
   return (
@@ -49,8 +61,8 @@ function App() {
       <GlobalStyle />
       <GlobalVariables />
       <AppStyles id="top" ref={navRef}>
-        <NavButton onClick={handleShowNav}>{navSVG}</NavButton>
-        <Navbar theme={theme} themeToggler={themeToggler} navIsVisible={navIsVisible} />
+        <NavButton onClick={handleShowNav}>{navIsVisible ? closeSVG : navSVG}</NavButton>
+        <Navbar handleShowNav={handleShowNav} theme={theme} themeToggler={themeToggler} navIsVisible={navIsVisible} />
         <Landing />
         <ScrollToTop />
         <Suspense fallback={<div>Loading...</div>}>

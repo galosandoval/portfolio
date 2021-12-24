@@ -81,6 +81,13 @@ export const Slice = styled.div.attrs((p) => ({
     transform: skew(-165deg, -165deg) rotate(-45deg) translateX(${(p) => p.move}%);
     z-index: -1;
     opacity: 1;
+
+    @media ${device.phone} {
+      transform: ${(p) =>
+        p.move
+          ? "skew(-165deg, -165deg) rotate(-45deg) translateX(110%)"
+          : "skew(-165deg, -165deg) rotate(-45deg) translateX(0)"};
+    }
   }
 `;
 
@@ -117,7 +124,7 @@ export const Tech = styled.div`
   visibility: ${(p) => (p.isVisible ? "visible" : "hidden")};
   position: absolute;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   font-size: 1.5rem;
 
   @media ${device.tabPort} {
@@ -125,7 +132,7 @@ export const Tech = styled.div`
   }
   @media ${device.phone} {
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 2rem;
     margin-top: 7rem;
   }
 
