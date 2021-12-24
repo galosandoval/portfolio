@@ -4,7 +4,7 @@
 
 My goal was to simulate a professional work environment
 
-- I built this web app based on figma designs, although the design for the finished project is very different:
+- I built this web app based on figma designs, although the design for the finished project is very different. The finished project took a lot of inspiration from the 2 files on the top of the screenshot:
   ![](public/figma.png)
 - I worked with tasks on a Kanban board:
   ![](public/trello.png)
