@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
-import { Button, Container } from "../../styles/shared";
+import { FromLeftAnimation, FromRightAnimation, FromTopAnimation } from "../../styles/animation";
+import { Button, Container, Title } from "../../styles/shared";
 import { flexCenter } from "../../styles/utility";
 
 export const ProjectStyles = styled.div.attrs(() => ({
@@ -12,6 +13,10 @@ export const ProjectContainer = styled(Container)`
   padding: 5rem 0;
 `;
 
+export const ProjectTitle = styled(Title)`
+  ${FromTopAnimation}
+`;
+
 export const ProjectContent = styled.div`
   display: flex;
   flex-direction: ${(p) => (p.reverse ? "row-reverse" : "row")};
@@ -22,6 +27,7 @@ export const Stack = styled.div`
   flex-direction: column;
   gap: 1rem;
   padding: 0 1rem;
+  ${FromLeftAnimation}
 
   p {
     padding: 1rem;
@@ -40,7 +46,8 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   width: 50%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+
   span {
     margin-right: 0.5rem;
     color: ${({ theme }) => theme.primary};
@@ -49,6 +56,10 @@ export const ListItem = styled.li`
     height: 1.5rem;
     width: 1.5rem;
   }
+`;
+
+export const MediaContainer = styled.div`
+  ${FromRightAnimation}
 `;
 
 export const ButtonContainer = styled.div`

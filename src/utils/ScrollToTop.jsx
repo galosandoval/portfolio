@@ -3,6 +3,8 @@ import styled from "styled-components/macro";
 import { upArrowSVG } from "../assets/svgs";
 import { debounce } from "./debounce";
 import { flexCenter } from "../styles/utility";
+import { FromRightAnimation } from "../styles/animation";
+import { useObserver } from "./useObserver";
 
 const RoundButton = styled.a`
   position: fixed;
@@ -21,6 +23,7 @@ const RoundButton = styled.a`
   width: 4.5rem;
   ${flexCenter}
   backdrop-filter: blur(2px);
+  ${FromRightAnimation}
 
   &:hover {
     transform: translateY(-3px);
@@ -30,6 +33,7 @@ const RoundButton = styled.a`
 const ScrollToTop = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [containerRef, isVisible] = useObserver();
 
   const handleScroll = debounce(() => {
     const currentScrollPos = window.pageYOffset;
@@ -45,7 +49,13 @@ const ScrollToTop = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll, prevScrollPos, visible]);
   return (
-    <RoundButton target="_top" href="#nav" visible={visible}>
+    <RoundButton
+      target="_top"
+      href="#nav"
+      visible={visible}
+      ref={containerRef}
+      isVisible={isVisible}
+    >
       {upArrowSVG}
     </RoundButton>
   );

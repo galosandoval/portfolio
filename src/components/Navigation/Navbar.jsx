@@ -10,11 +10,13 @@ import {
   sunSVG
 } from "../../assets/svgs.jsx";
 import { Toggle } from "../../utils/Toggle";
+import { useObserver } from "../../utils/useObserver.js";
 import { NavbarStyles, NavA, Item } from "./Navbar.styles.jsx";
 
 const Navbar = ({ theme, themeToggler }) => {
+  const [containerRef, isVisible] = useObserver();
   return (
-    <NavbarStyles>
+    <NavbarStyles ref={containerRef} isVisible={isVisible}>
       <Item>
         <NavA href="#about">{aboutMeSVG}</NavA>
         <span>Me</span>

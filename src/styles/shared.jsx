@@ -1,6 +1,11 @@
 import styled from "styled-components/macro";
 import { flexCenter } from "./utility";
 
+export const Navigation = styled.ul`
+  display: flex;
+  align-items: center;
+`;
+
 export const Container = styled.div`
   border-radius: 5px;
   display: flex;

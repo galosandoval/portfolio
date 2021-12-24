@@ -1,14 +1,17 @@
 import React from "react";
-import { AboutButton, AboutMeStyles, Content, RedAbout } from "./AboutMe.styles";
+import { AboutButton, AboutMeStyles, Content, MeImg, RedAbout } from "./AboutMe.styles";
 import profilePic from "../../assets/mepng.png";
 import { AccentFont } from "../../styles/shared";
+import { useObserver } from "../../utils/useObserver";
 
 const AboutMe = () => {
+  const [imgRef, imgIsVisible] = useObserver();
+  const [contentRef, contentIsVisible] = useObserver();
   return (
     <AboutMeStyles>
       <RedAbout>
-        <img src={profilePic} alt="My Mugshot" />
-        <Content>
+        <MeImg ref={imgRef} isVisible={imgIsVisible} src={profilePic} alt="My Mugshot" />
+        <Content ref={contentRef} isVisible={contentIsVisible}>
           <p>
             I am <AccentFont>Galo Sandoval</AccentFont>. I enjoy developing websites in{" "}
             <AccentFont>JavaScript</AccentFont>, working on both

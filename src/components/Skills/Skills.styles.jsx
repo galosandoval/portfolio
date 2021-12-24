@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { FromLeftAnimation, FromRightAnimation } from "../../styles/animation";
 import { flex, flexCenter } from "../../styles/utility";
 
 export const SkillsStyles = styled.section.attrs(() => ({
@@ -20,6 +21,8 @@ export const StackContainer = styled.div`
   position: relative;
   height: 300px;
   align-self: center;
+
+  ${FromLeftAnimation}
 `;
 
 export const Stack = styled.div`
@@ -87,6 +90,8 @@ export const Info = styled.article`
   gap: 2.5rem;
   text-align: center;
   position: relative;
+
+  ${FromRightAnimation}
 `;
 
 export const Tech = styled.div`
