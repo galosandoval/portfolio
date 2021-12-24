@@ -46,7 +46,6 @@ function App() {
 
   const handleShowNav = () => {
     const nav = document.querySelector("#nav");
-    console.log({ nav });
     if (navIsVisible) {
       enableBodyScroll(nav);
       setNavIsVisible(false);
@@ -62,7 +61,12 @@ function App() {
       <GlobalVariables />
       <AppStyles id="top" ref={navRef}>
         <NavButton onClick={handleShowNav}>{navIsVisible ? closeSVG : navSVG}</NavButton>
-        <Navbar handleShowNav={handleShowNav} theme={theme} themeToggler={themeToggler} navIsVisible={navIsVisible} />
+        <Navbar
+          handleShowNav={handleShowNav}
+          theme={theme}
+          themeToggler={themeToggler}
+          navIsVisible={navIsVisible}
+        />
         <Landing />
         <ScrollToTop />
         <Suspense fallback={<div>Loading...</div>}>

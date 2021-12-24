@@ -18,6 +18,9 @@ export const SkillsStyles = styled.section.attrs(() => ({
   @media ${device.tabLand} {
     flex-direction: column;
   }
+  @media ${device.phone} {
+    padding: 14rem 0;
+  }
 `;
 
 export const StackContainer = styled.div`
