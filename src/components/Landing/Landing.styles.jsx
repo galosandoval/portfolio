@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { FromLeftAnimation } from "../../styles/animation";
 import { Button } from "../../styles/shared";
 
 export const LandingStyles = styled.section`
@@ -13,6 +14,7 @@ export const LandingStyles = styled.section`
 
 export const Header = styled.div`
   font-size: 3.5rem;
+  ${FromLeftAnimation}
 
   svg {
     height: 3.5rem;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { backend, frontend, stack, tools } from "../../assets/skillsData.js";
+import { useObserver } from "../../utils/useObserver.js";
 import {
   SkillsStyles,
   Stack,
@@ -20,12 +21,13 @@ const initialState = {
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(initialState);
+  const [stackRef, stackIsVisible] = useObserver();
+  const [infoRef, infoIsVisible] = useObserver();
+
   const handleMouseOver = (event) => {
     const { id } = event.currentTarget;
 
     setIsVisible((state) => ({ ...state, info: false }));
-
-    console.log({ isVisible });
 
     if (id === "top") {
       setIsVisible((state) => ({ ...state, frontend: true }));
@@ -38,7 +40,7 @@ const Skills = () => {
 
   return (
     <SkillsStyles>
-      <StackContainer>
+      <StackContainer ref={stackRef} isVisible={stackIsVisible}>
         <Stack>
           {stack.map((s) => (
             <Slice
@@ -54,7 +56,7 @@ const Skills = () => {
           ))}
         </Stack>
       </StackContainer>
-      <Info>
+      <Info ref={infoRef} isVisible={infoIsVisible}>
         <Tech isVisible={isVisible.info} as="p">
           Wanna see some skills? <br></br> Hover over a piece of the stack on the left.
         </Tech>

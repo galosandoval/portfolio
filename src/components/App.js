@@ -1,20 +1,20 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import styled from "styled-components/macro";
 import { ThemeProvider } from "styled-components";
 
 import Landing from "./Landing/Landing";
 import Navbar from "./Navigation/Navbar";
-import Projects from "./Projects/Projects";
-import Skills from "./Skills/Skills";
+import ScrollToTop from "../utils/ScrollToTop";
 import { darkTheme, lightTheme } from "../styles/Themes";
 import { GlobalStyle } from "../styles/globalStyles";
 import { useDarkMode } from "../utils/useDarkMode";
 import { GlobalVariables } from "../styles/GlobalVariables";
 import { flexCenter } from "../styles/utility";
-import AboutMe from "./AboutMe/AboutMe";
-import ContactMe from "./ContactMe/ContactMe";
-import Footer from "./Footer/Footer";
-import ScrollToTop from "../utils/ScrollToTop";
+const Skills = lazy(() => import("./Skills/Skills"));
+const ContactMe = lazy(() => import("./ContactMe/ContactMe"));
+const Footer = lazy(() => import("./Footer/Footer"));
+const Projects = lazy(() => import("./Projects/Projects"));
+const AboutMe = lazy(() => import("./AboutMe/AboutMe"));
 
 const AppStyles = styled.main`
   ${flexCenter}
@@ -35,12 +35,14 @@ function App() {
       <AppStyles>
         <Navbar theme={theme} themeToggler={themeToggler} />
         <Landing />
-        <AboutMe />
-        <Projects />
-        <Skills />
-        <ContactMe />
-        <Footer />
         <ScrollToTop />
+        <Suspense fallback={<div>Loading...</div>}>
+          <AboutMe />
+          <Projects />
+          <Skills />
+          <ContactMe />
+          <Footer />
+        </Suspense>
       </AppStyles>
     </ThemeProvider>
   );

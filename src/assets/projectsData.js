@@ -40,7 +40,13 @@ export const projects = [
     id: "portfolio",
     name: "Portolio",
     stack: ["React", "Styled-Components", "JavaScript", "Emailjs-com"],
-    highlights: ["Debounce", "Dark Mode", "Planned using Figma"],
+    highlights: [
+      "Debounce",
+      "Dark Mode Custom Hook",
+      "Intersection Observer Custom Hook",
+      "Planned using Figma",
+      "Lazy Loading"
+    ],
     description:
       "Made using figma to make wireframes, to plan out components, colors, and layout. Yes, it's the site you're currently on.",
     video: null,

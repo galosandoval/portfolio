@@ -1,14 +1,16 @@
 import styled from "styled-components/macro";
+import { FromTopAnimation } from "../../styles/animation";
+import { Navigation } from "../../styles/shared";
 import { flexCenter } from "../../styles/utility";
 
-export const NavbarStyles = styled.ul.attrs(() => ({
+export const NavbarStyles = styled(Navigation).attrs(() => ({
   id: "nav"
 }))`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 88%;
   margin-top: 1rem;
+  ${FromTopAnimation}
 `;
 
 export const Item = styled.li`

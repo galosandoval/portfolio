@@ -4,11 +4,13 @@ import { send } from "emailjs-com";
 import { Title } from "../../styles/shared.jsx";
 import {
   ContactForm,
+  ContactImg,
   ContactMeContainer,
   ContactMeStyles,
   FormButton
 } from "./ContactMe.styles.jsx";
 import contactMe from "../../assets/contactMe.png";
+import { useObserver } from "../../utils/useObserver.js";
 
 const initialState = { from_name: "", to_name: "Galo", reply_to: "", message: "" };
 
@@ -21,6 +23,9 @@ const ContactMe = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  const [formRef, formIsVisible] = useObserver();
+  const [imgRef, imgIsVisible] = useObserver();
 
   const handleChange = (event) => {
     setToSend((state) => ({ ...state, [event.target.name]: event.target.value }));
@@ -51,7 +56,7 @@ const ContactMe = () => {
   return (
     <ContactMeStyles>
       <ContactMeContainer>
-        <ContactForm onSubmit={handleSubmit}>
+        <ContactForm ref={formRef} isVisible={formIsVisible} onSubmit={handleSubmit}>
           <Title>Let's Chat</Title>
           <label>
             Name
@@ -93,7 +98,7 @@ const ContactMe = () => {
               : "Send"}
           </FormButton>
         </ContactForm>
-        <img src={contactMe} alt="cartoon of me" />
+        <ContactImg ref={imgRef} isVisible={imgIsVisible} src={contactMe} alt="cartoon of me" />
       </ContactMeContainer>
     </ContactMeStyles>
   );

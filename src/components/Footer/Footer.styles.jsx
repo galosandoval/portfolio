@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
+import { Navigation } from "../../styles/shared";
 import { flexCenter } from "../../styles/utility";
-import { NavA, NavbarStyles } from "../Navigation/Navbar.styles";
+import { NavA } from "../Navigation/Navbar.styles";
 
 export const FooterStyles = styled.footer`
   background-color: ${({ theme }) => theme.grey};
@@ -11,16 +12,15 @@ export const FooterStyles = styled.footer`
   justify-content: space-evenly;
 `;
 
-export const IconContainer = styled(NavbarStyles)`
+export const IconContainer = styled(Navigation)`
   justify-content: center;
-  width: revert;
 `;
 
 export const FooterLink = styled(NavA)`
+  color: ${({ theme }) => theme.primary};
   background-color: transparent;
   transform: translateY(0);
-
-  svg {
+  i svg {
     transition: all 0.3s ease;
     color: ${({ theme }) => theme.primary};
   }

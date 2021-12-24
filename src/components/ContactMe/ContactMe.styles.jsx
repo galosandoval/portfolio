@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { FromLeftAnimation, FromRightAnimation } from "../../styles/animation";
 import { Button, Container } from "../../styles/shared";
 import { flexCenter } from "../../styles/utility";
 
@@ -6,18 +7,21 @@ export const ContactMeStyles = styled.section.attrs(() => ({
   id: "contact"
 }))`
   width: 88%;
-  padding: 5rem 0;
+  margin: 7rem 0;
 `;
 
 export const ContactMeContainer = styled(Container)`
   ${flexCenter}
   flex-direction: row;
   justify-content: space-evenly;
-  img {
-    object-fit: contain;
-    height: 30rem;
-    width: 30rem;
-  }
+`;
+
+export const ContactImg = styled.img`
+  object-fit: contain;
+  height: 30rem;
+  width: 30rem;
+
+  ${FromRightAnimation}
 `;
 
 export const ContactForm = styled.form`
@@ -25,6 +29,8 @@ export const ContactForm = styled.form`
   flex-direction: column;
   gap: 2rem;
   width: 45%;
+  ${FromLeftAnimation}
+
   label {
     display: flex;
     justify-content: space-between;
