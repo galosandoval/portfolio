@@ -80,6 +80,31 @@ export const ListItem = styled.li`
   }
 `;
 
+export const HighlightLink = styled.a.attrs(() => ({
+  target: "_blank"
+}))`
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    color: ${({ theme }) => theme.primary};
+
+    &::after {
+      width: 100%;
+    }
+  }
+  &::after {
+    content: "";
+    height: 1px;
+    width: 0;
+    background: ${({ theme }) => theme.primary};
+    position: absolute;
+    transition: all 0.5s ease;
+    bottom: 0;
+    left: 0;
+  }
+`;
+
 export const MediaContainer = styled.div`
   ${FromRightAnimation}
 `;
