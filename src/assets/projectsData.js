@@ -14,6 +14,13 @@ export const projects = [
       "React-query instead of state management",
       "Tasks managed by Trello"
     ],
+    highlightLinks: [
+      "https://github.com/galosandoval/listy-frontend/blob/main/src/features/grocerylist/Carousel.jsx",
+      "https://github.com/galosandoval/listy-backend/blob/main/api/auth/auth-router.js#L40",
+      "https://github.com/galosandoval/listy-frontend/blob/main/src/features/App.jsx#L12",
+      "https://github.com/galosandoval/listy-frontend/blob/main/src/features/services/ingredientsService.js",
+      "https://github.com/galosandoval/listy-frontend/blob/main/README.md"
+    ],
     description:
       "Web App I made to save recipes and make lists for grocery shopping. The main feature of the app is it parses instructions and ingredients from your favorite recipes and saves them to your account.",
     video: listy,
@@ -27,7 +34,14 @@ export const projects = [
     highlights: [
       "useEffect with timers",
       "Animation with keyframes",
-      "Saves user's preference in local storage"
+      "Saves user's preference in local storage",
+      "State mananagement using useState"
+    ],
+    highlightLinks: [
+      "https://github.com/galosandoval/478-breathing/blob/main/src/features/instructions/Instructions.jsx#L19",
+      "https://github.com/galosandoval/478-breathing/blob/main/src/features/countdown/Countdown.jsx#L6",
+      "https://github.com/galosandoval/478-breathing/blob/main/src/features/modal/Modal.jsx#L6",
+      "https://github.com/galosandoval/478-breathing/blob/main/src/App.js#L47"
     ],
     description:
       "Breathing exercises can improve your well-being. With the 4-7-8 Breathing Helper, control your cravings and sleep faster. You'll find links to more information in the app.",
@@ -47,6 +61,13 @@ export const projects = [
       "Planned using Figma",
       "Lazy Loading"
     ],
+    highlightLinks: [
+      "https://github.com/galosandoval/portfolio/blob/main/src/utils/ScrollToTop.jsx#L34",
+      "https://github.com/galosandoval/portfolio/blob/main/src/utils/useDarkMode.js",
+      "https://github.com/galosandoval/portfolio/blob/main/src/utils/useObserver.js",
+      "https://github.com/galosandoval/portfolio/blob/main/README.md",
+      "https://github.com/galosandoval/portfolio/blob/main/src/components/App.js#L15"
+    ],
     description:
       "Made using figma to make wireframes, to plan out components, colors, and layout. Yes, it's the site you're currently on.",
     video: null,
@@ -59,12 +80,12 @@ export const projects = [
     name: "Misc Projects",
     stack: [
       "Java",
+      "Python",
       "Docker",
       "SCSS",
       "Styled-Components",
       "Redux",
       "Angular",
-      "Python",
       "Firebase"
     ],
     highlights: ["AWS Certificate", "Badges from IBM"],

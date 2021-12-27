@@ -11,7 +11,8 @@ import {
   List,
   MediaContainer,
   ProjectTitle,
-  ListContainer
+  ListContainer,
+  HighlightLink
 } from "./Projects.styles.jsx";
 import { SubTitle } from "../../styles/shared.jsx";
 import { projects } from "../../assets/projectsData.js";
@@ -23,10 +24,12 @@ const Projects = () => {
   const [stackRef2, stackIsVisible2] = useObserver();
   const [stackRef3, stackIsVisible3] = useObserver();
   const [stackRef4, stackIsVisible4] = useObserver();
+
   const [titleRef1, titleIsVisible1] = useObserver();
   const [titleRef2, titleIsVisible2] = useObserver();
   const [titleRef3, titleIsVisible3] = useObserver();
   const [titleRef4, titleIsVisible4] = useObserver();
+
   const [videoRef1, videoIsVisible1] = useObserver();
   const [videoRef2, videoIsVisible2] = useObserver();
   const [videoRef3, videoIsVisible3] = useObserver();
@@ -62,10 +65,14 @@ const Projects = () => {
                 </List>
                 <List>
                   <SubTitle>Highlights</SubTitle>
-                  {project.highlights.map((h) => (
+                  {project.highlights.map((h, i) => (
                     <ListItem key={h}>
                       <span>{checkSVG}</span>
-                      {h}
+                      {project.highlightLinks ? (
+                        <HighlightLink href={project.highlightLinks[i]}>{h}</HighlightLink>
+                      ) : (
+                        h
+                      )}
                     </ListItem>
                   ))}
                 </List>
