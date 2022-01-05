@@ -63,7 +63,7 @@ function App() {
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
-      {isLoading && <Loading />}
+      <Loading isLoading={isLoading} />
       <AppStyles isLoading={isLoading} id="top" ref={navRef}>
         <NavButton onClick={handleShowNav}>{navIsVisible ? closeSVG : navSVG}</NavButton>
         <Navbar

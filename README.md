@@ -29,6 +29,7 @@ My goal was to simulate a professional work environment
     |       |-- ContactMe
     |       |-- Footer
     |       |-- Landing
+    |       |-- Loading
     |       |-- Navigation
     |       |-- Projects
     |       |-- Skills
