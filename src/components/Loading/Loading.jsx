@@ -1,9 +1,9 @@
 import React from "react";
 import { LoadingDots, LoadingTitle, StyledLoading } from "./Loading.styles";
 
-const Loading = () => {
+const Loading = ({ isLoading }) => {
   return (
-    <StyledLoading>
+    <StyledLoading isLoading={isLoading}>
       <LoadingTitle>
         Loading<LoadingDots>.</LoadingDots>
       </LoadingTitle>
