@@ -8,7 +8,7 @@ const AboutMe = () => {
   const [imgRef, imgIsVisible] = useObserver();
   const [contentRef, contentIsVisible] = useObserver();
   return (
-    <AboutMeStyles>
+    <AboutMeStyles id="about">
       <RedAbout>
         <MeImg ref={imgRef} isVisible={imgIsVisible} src={profilePic} alt="My Mugshot" />
         <Content ref={contentRef} isVisible={contentIsVisible}>
