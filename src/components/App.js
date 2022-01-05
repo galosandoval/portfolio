@@ -1,14 +1,12 @@
 import React, { lazy, Suspense, useRef, useState } from "react";
 import styled, { ThemeProvider } from "styled-components/macro";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-
 import Landing from "./Landing/Landing";
 import Navbar from "./Navigation/Navbar";
 import ScrollToTop from "../utils/ScrollToTop";
 import { darkTheme, lightTheme } from "../styles/Themes";
 import { GlobalStyle } from "../styles/globalStyles";
 import { useDarkMode } from "../utils/useDarkMode";
-import { GlobalVariables } from "../styles/GlobalVariables";
 import { flexCenter } from "../styles/utility";
 import { device } from "../styles/mediaQueries";
 import { closeSVG, navSVG } from "../assets/svgs";
@@ -44,20 +42,22 @@ function App() {
   if (!mountedComponent) return <div />;
 
   const handleShowNav = () => {
-    const nav = document.querySelector("#nav");
-    if (navIsVisible) {
-      enableBodyScroll(nav);
-      setNavIsVisible(false);
-    } else {
-      disableBodyScroll(nav);
-      setNavIsVisible(true);
+    const windowWidth = window.screen.width;
+    if (windowWidth <= 575) {
+      const nav = document.querySelector("#nav");
+      if (navIsVisible) {
+        enableBodyScroll(nav);
+        setNavIsVisible(false);
+      } else {
+        disableBodyScroll(nav);
+        setNavIsVisible(true);
+      }
     }
   };
 
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
-      <GlobalVariables />
       <AppStyles id="top" ref={navRef}>
         <NavButton onClick={handleShowNav}>{navIsVisible ? closeSVG : navSVG}</NavButton>
         <Navbar
