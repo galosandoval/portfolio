@@ -2,6 +2,10 @@ import listy from "../assets/listy-video.mp4";
 import breathing from "../assets/breathing-video.mp4";
 import miscProjects from "../assets/misc-projects.mp4";
 
+import listyPlaceholder from "./listy-placeholder.png";
+import breathingPlaceholder from "./breathing-app-placeholder.png";
+import miscPlaceholder from "./misc-projects-placeholder.png";
+
 export const projects = [
   {
     id: "listy",
@@ -24,6 +28,7 @@ export const projects = [
     description:
       "Web App I made to save recipes and make lists for grocery shopping. The main feature of the app is it parses instructions and ingredients from your favorite recipes and saves them to your account.",
     video: listy,
+    placeholder: listyPlaceholder,
     web: "https://awesome-jackson-9126be.netlify.app/",
     github: "https://github.com/galosandoval/listy-frontend"
   },
@@ -46,6 +51,7 @@ export const projects = [
     description:
       "Breathing exercises can improve your well-being. With the 4-7-8 Breathing Helper, control your cravings and sleep faster. You'll find links to more information in the app.",
     video: breathing,
+    placeholder: breathingPlaceholder,
     web: "https://478-breathing.vercel.app/",
     github: "https://github.com/galosandoval/478-breathing",
     reverse: true
@@ -92,6 +98,7 @@ export const projects = [
     description:
       "Variety of small projects I've worked on from courses with my apprenticeship at IBM or a technology I wanted to learn on the side.",
     video: miscProjects,
+    placeholder: miscPlaceholder,
     web: null,
     github: "https://github.com/galosandoval",
     reverse: true

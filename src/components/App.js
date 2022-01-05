@@ -10,6 +10,7 @@ import { useDarkMode } from "../utils/useDarkMode";
 import { flexCenter } from "../styles/utility";
 import { device } from "../styles/mediaQueries";
 import { closeSVG, navSVG } from "../assets/svgs";
+import Loading from "./Loading/Loading";
 const Skills = lazy(() => import("./Skills/Skills"));
 const ContactMe = lazy(() => import("./ContactMe/ContactMe"));
 const Footer = lazy(() => import("./Footer/Footer"));
@@ -20,6 +21,8 @@ const AppStyles = styled.main`
   ${flexCenter}
   flex-direction: column;
   overflow: hidden;
+
+  display: ${(p) => (p.isLoading ? "none" : "flex")};
 `;
 
 export const NavButton = styled.button`
@@ -38,8 +41,9 @@ function App() {
   const themeMode = theme === "light" ? lightTheme : darkTheme;
   const navRef = useRef(null);
   const [navIsVisible, setNavIsVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  if (!mountedComponent) return <div />;
+  const myRef = useRef(null);
 
   const handleShowNav = () => {
     const windowWidth = window.screen.width;
@@ -55,10 +59,12 @@ function App() {
     }
   };
 
+  if (!mountedComponent) return <div />;
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
-      <AppStyles id="top" ref={navRef}>
+      {isLoading && <Loading />}
+      <AppStyles isLoading={isLoading} id="top" ref={navRef}>
         <NavButton onClick={handleShowNav}>{navIsVisible ? closeSVG : navSVG}</NavButton>
         <Navbar
           handleShowNav={handleShowNav}
@@ -70,7 +76,7 @@ function App() {
         <ScrollToTop />
         <Suspense fallback={<div>Loading...</div>}>
           <AboutMe />
-          <Projects />
+          <Projects setIsLoading={setIsLoading} myRef={myRef} />
           <Skills />
           <ContactMe />
           <Footer />
