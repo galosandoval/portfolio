@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { pauseSVG, playSVG } from "../../assets/svgs";
-import { Frame, ThemeImage, VideoButton, VideoContainer } from "./Projects.styles";
+import {
+  Frame,
+  Placeholder,
+  ThemeImage,
+  Video,
+  VideoButton,
+  VideoContainer
+} from "./Projects.styles";
 
-const ProjectVideo = ({ project }) => {
+const ProjectVideo = ({ project, setImagesLoadedCount }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlay = (event) => {
@@ -15,20 +22,22 @@ const ProjectVideo = ({ project }) => {
       setIsPlaying(true);
     }
   };
+
+  const handleOnLoad = () => {
+    setImagesLoadedCount((state) => state + 1);
+  };
+
   return (
     <Frame>
-      {project.hasScreenShots ? ( // <ImgContainer>
-        //   <img src={portfolioSideA} alt="screen shot of portfolio dark mode" />
-        //   <img src={portfolioSideB} alt="screen shot of portfolio light mode" />
-        // </ImgContainer>
-
+      {project.hasScreenShots ? (
         <ThemeImage />
       ) : (
         <VideoContainer>
           <VideoButton name={project.id} onClick={handlePlay}>
             {isPlaying ? pauseSVG : playSVG}
           </VideoButton>
-          <video id={project.id} src={project.video} alt={project.name} />
+          <Placeholder isPlaying={isPlaying} src={project.placeholder} onLoad={handleOnLoad} />
+          <Video isPlaying={isPlaying} id={project.id} src={project.video} alt={project.name} />
         </VideoContainer>
       )}
     </Frame>

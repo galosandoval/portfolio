@@ -153,23 +153,6 @@ export const VideoContainer = styled.div`
   flex-direction: column;
   position: relative;
 
-  video {
-    border-radius: 5px;
-    position: relative;
-
-    @media ${device.tabLand} {
-      width: 42rem;
-    }
-    @media ${device.tabPort} {
-      border: 2px solid ${({ theme }) => theme.secondary};
-    }
-    @media ${device.phone} {
-      border: none;
-      height: 12rem;
-      width: 25rem;
-    }
-  }
-
   &:hover button {
     opacity: 0.85;
     transform: translateY(0);
@@ -189,6 +172,41 @@ export const VideoContainer = styled.div`
 
   @media ${device.phone} {
     width: 100%;
+  }
+`;
+
+export const Placeholder = styled.img`
+  position: absolute;
+  width: 30rem;
+  opacity: ${(p) => (p.isPlaying ? 0 : 1)};
+  z-index: ${(p) => (p.isPlaying ? 0 : 1)};
+
+  @media ${device.tabLand} {
+    width: 42rem;
+  }
+  @media ${device.phone} {
+    border: none;
+    height: 12rem;
+    width: 25rem;
+  }
+`;
+
+export const Video = styled.video`
+  border-radius: 5px;
+  position: relative;
+  z-index: ${(p) => (p.isPlaying ? 1 : 0)};
+  width: 30rem;
+
+  @media ${device.tabLand} {
+    width: 42rem;
+  }
+  @media ${device.tabPort} {
+    border: 2px solid ${({ theme }) => theme.secondary};
+  }
+  @media ${device.phone} {
+    border: none;
+    height: 12rem;
+    width: 25rem;
   }
 `;
 

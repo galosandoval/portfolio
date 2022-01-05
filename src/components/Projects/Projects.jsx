@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { checkSVG, codeSVG, webSVG } from "../../assets/svgs.jsx";
 import {
   ProjectStyles,
@@ -19,7 +19,9 @@ import { projects } from "../../assets/projectsData.js";
 import ProjectVideo from "./ProjectVideo.jsx";
 import { useObserver } from "../../utils/useObserver.js";
 
-const Projects = () => {
+const Projects = ({ myRef, setIsLoading }) => {
+  const [imagesLoadedCount, setImagesLoadedCount] = useState(0);
+
   const [stackRef1, stackIsVisible1] = useObserver();
   const [stackRef2, stackIsVisible2] = useObserver();
   const [stackRef3, stackIsVisible3] = useObserver();
@@ -43,8 +45,14 @@ const Projects = () => {
   const videoIsVisible = [videoIsVisible1, videoIsVisible2, videoIsVisible3, videoIsVisible4];
   const titleIsVisible = [titleIsVisible1, titleIsVisible2, titleIsVisible3, titleIsVisible4];
 
+  useEffect(() => {
+    if (imagesLoadedCount === 3) {
+      setIsLoading(false);
+    }
+  }, [imagesLoadedCount, setIsLoading]);
+
   return (
-    <ProjectStyles>
+    <ProjectStyles ref={myRef}>
       {projects.map((project, index) => (
         <ProjectContainer key={project.name}>
           <ProjectTitle ref={titleRefs[index]} isVisible={titleIsVisible[index]}>
@@ -79,7 +87,12 @@ const Projects = () => {
               </ListContainer>
             </Stack>
             <MediaContainer ref={videoRefs[index]} isVisible={videoIsVisible[index]}>
-              <ProjectVideo project={project} />
+              <ProjectVideo
+                imagesLoadedCount={imagesLoadedCount}
+                setImagesLoadedCount={setImagesLoadedCount}
+                setIsLoading={setIsLoading}
+                project={project}
+              />
               <ButtonContainer>
                 <ProjectButton href={project.github}>{codeSVG}</ProjectButton>
                 {project.web && <ProjectButton href={project.web}>{webSVG}</ProjectButton>}
