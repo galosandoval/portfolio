@@ -63,10 +63,7 @@ export const Item = styled.li`
   }
 `;
 
-export const NavA = styled.a.attrs((props) => ({
-  href: props.href,
-  target: props.target ? props.target : "_self"
-}))`
+export const NavA = styled.a`
   cursor: pointer;
   color: ${({ theme }) => theme.secondary};
   padding: 2rem;

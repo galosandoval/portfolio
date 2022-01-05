@@ -4,9 +4,7 @@ import { FromLeftAnimation, FromRightAnimation } from "../../styles/animation";
 import { device } from "../../styles/mediaQueries";
 import { Button, Container } from "../../styles/shared";
 
-export const AboutMeStyles = styled.div.attrs(() => ({
-  id: "about"
-}))`
+export const AboutMeStyles = styled.div`
   width: 100%;
   transition: transform ease 1.5s 0.5s, opacity 1.5s ease 0.5s;
 `;
