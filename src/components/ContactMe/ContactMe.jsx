@@ -7,16 +7,17 @@ import {
   ContactImg,
   ContactMeContainer,
   ContactMeStyles,
-  FormButton
+  FormButton,
 } from "./ContactMe.styles.jsx";
 import contactMe from "../../assets/contactMe.png";
 import { useObserver } from "../../utils/useObserver.js";
 
-const initialState = { from_name: "", to_name: "Galo", reply_to: "", message: "" };
-
-const SERVICE_ID = "service_0mgnl82";
-const TEMPLATE_ID = "template_hhr0fyj";
-const USER_ID = "user_17N9BCgToblTIGskYnvgI";
+const initialState = {
+  from_name: "",
+  to_name: "Galo",
+  reply_to: "",
+  message: "",
+};
 
 const ContactMe = () => {
   const [toSend, setToSend] = useState(initialState);
@@ -28,7 +29,10 @@ const ContactMe = () => {
   const [imgRef, imgIsVisible] = useObserver();
 
   const handleChange = (event) => {
-    setToSend((state) => ({ ...state, [event.target.name]: event.target.value }));
+    setToSend((state) => ({
+      ...state,
+      [event.target.name]: event.target.value,
+    }));
   };
 
   const handleSubmit = (event) => {
@@ -36,7 +40,12 @@ const ContactMe = () => {
 
     setIsLoading(true);
 
-    send(SERVICE_ID, TEMPLATE_ID, toSend, USER_ID)
+    send(
+      process.env.SERVICE_ID,
+      process.env.TEMPLATE_ID,
+      toSend,
+      process.env.USER_ID
+    )
       .then((response) => {
         if (response.status === 200) setIsSuccess(true);
         setToSend(initialState);
@@ -56,7 +65,11 @@ const ContactMe = () => {
   return (
     <ContactMeStyles>
       <ContactMeContainer>
-        <ContactForm ref={formRef} isVisible={formIsVisible} onSubmit={handleSubmit}>
+        <ContactForm
+          ref={formRef}
+          isVisible={formIsVisible}
+          onSubmit={handleSubmit}
+        >
           <Title>Let's Chat</Title>
           <label>
             Name
@@ -98,7 +111,12 @@ const ContactMe = () => {
               : "Send"}
           </FormButton>
         </ContactForm>
-        <ContactImg ref={imgRef} isVisible={imgIsVisible} src={contactMe} alt="cartoon of me" />
+        <ContactImg
+          ref={imgRef}
+          isVisible={imgIsVisible}
+          src={contactMe}
+          alt="cartoon of me"
+        />
       </ContactMeContainer>
     </ContactMeStyles>
   );
