@@ -9,19 +9,18 @@ export function GradiantOnMouseMove() {
     const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({ x: event.clientX, y: event.clientY })
     }
-
-    document.addEventListener("mousemove", handleMouseMove)
+    window.addEventListener("mousemove", handleMouseMove)
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove)
+      window.removeEventListener("mousemove", handleMouseMove)
     }
   }, [])
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute"
+      className="pointer-events-none fixed inset-0 z-30 transition duration-300"
       style={{
-        background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, var(--gradient), transparent 80%`
+        background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, hsl(var(--card)), transparent 100%`
       }}
     ></div>
   )

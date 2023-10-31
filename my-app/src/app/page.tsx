@@ -8,7 +8,7 @@ export default function HomePage() {
     <>
       <GradiantOnMouseMove />
 
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
+      <div className="relative z-30 mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
           <Header />
 
@@ -26,10 +26,10 @@ export default function HomePage() {
 function Header() {
   return (
     <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-      <div className="">
+      <div className="flex flex-col gap-4">
         <h1 className="text-4xl font-bold sm:text-5xl">Galo Sandoval</h1>
         <h2 className="text-lg font-medium sm:text-xl">Software Engineer</h2>
-        <p className="">
+        <p className="max-w-sm font-light leading-normal">
           I build accessible, inclusive products and digital experiences for the
           web.
         </p>

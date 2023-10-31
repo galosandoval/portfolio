@@ -2,6 +2,7 @@ import "~/styles/globals.css"
 import { GeistSans } from "geist/font"
 import { cn } from "~/lib/utils"
 import { ThemeProvider } from "~/components/theme-provider"
+import { GradiantOnMouseMove } from "~/components/gradient-on-mouse-move"
 
 export const metadata = {
   title: "Galo Sandoval",
@@ -18,7 +19,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "bg-background font-sans antialiased",
+          "bg-background relative font-sans leading-relaxed antialiased",
           GeistSans.variable
         )}
       >
