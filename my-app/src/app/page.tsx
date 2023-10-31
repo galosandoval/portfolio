@@ -1,6 +1,7 @@
-import { MoonIcon } from "@radix-ui/react-icons"
+import { Link2Icon } from "@radix-ui/react-icons"
 import { GradiantOnMouseMove } from "~/components/gradient-on-mouse-move"
 import { ModeToggle } from "~/components/mode-toggle"
+import { Badge } from "~/components/ui/badge"
 import { Button } from "~/components/ui/button"
 
 export default function HomePage() {
@@ -47,7 +48,7 @@ function Header() {
 
 function AboutMe() {
   return (
-    <section className="mb-16 md:mb-24 lg:mb-36">
+    <section className="mb-16 flex flex-col gap-4 md:mb-24 lg:mb-36">
       <p className="">
         Back in 2012, I decided to try my hand at creating custom Tumblr themes
         and tumbled head first into the rabbit hole of coding and web
@@ -70,11 +71,60 @@ function AboutMe() {
   )
 }
 
-const experience = [
+const experience: {
+  from: string
+  to: string
+  prevTitles: string[]
+  company: string
+  description: string
+  technologies: string[]
+  links: { title: string; url: string }[]
+}[] = [
   {
     from: "2019",
     to: "Present",
     prevTitles: ["Senior Software Engineer", "Software Engineer"],
+    company: "Lead Engineer · Upstatement",
+    description:
+      "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
+    technologies: [],
+    links: []
+  },
+  {
+    from: "2019",
+    to: "Present",
+    prevTitles: [],
+    company: "Lead Engineer · Upstatement",
+    description:
+      "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
+    technologies: [
+      "React",
+      "React Native",
+      "SCSS",
+      "Wordpress",
+      "Javascript",
+      "Typescript",
+      "PHP"
+    ],
+    links: []
+  },
+  {
+    from: "2019",
+    to: "Present",
+    prevTitles: [],
+    company: "Lead Engineer · Upstatement",
+    description:
+      "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
+    technologies: [],
+    links: [
+      { title: "Upstatement", url: "https://upstatement.com" },
+      { title: "Harvard Business School", url: "https://hbs.edu" }
+    ]
+  },
+  {
+    from: "2019",
+    to: "Present",
+    prevTitles: [],
     company: "Lead Engineer · Upstatement",
     description:
       "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
@@ -95,101 +145,68 @@ const experience = [
   {
     from: "2019",
     to: "Present",
-    prevTitles: ["Senior Software Engineer", "Software Engineer"],
+    prevTitles: [],
     company: "Lead Engineer · Upstatement",
     description:
       "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
-    technologies: [
-      "React",
-      "React Native",
-      "SCSS",
-      "Wordpress",
-      "Javascript",
-      "Typescript",
-      "PHP"
-    ],
-    links: [
-      { title: "Upstatement", url: "https://upstatement.com" },
-      { title: "Harvard Business School", url: "https://hbs.edu" }
-    ]
-  },
-  {
-    from: "2019",
-    to: "Present",
-    prevTitles: ["Senior Software Engineer", "Software Engineer"],
-    company: "Lead Engineer · Upstatement",
-    description:
-      "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
-    technologies: [
-      "React",
-      "React Native",
-      "SCSS",
-      "Wordpress",
-      "Javascript",
-      "Typescript",
-      "PHP"
-    ],
-    links: [
-      { title: "Upstatement", url: "https://upstatement.com" },
-      { title: "Harvard Business School", url: "https://hbs.edu" }
-    ]
-  },
-  {
-    from: "2019",
-    to: "Present",
-    prevTitles: ["Senior Software Engineer", "Software Engineer"],
-    company: "Lead Engineer · Upstatement",
-    description:
-      "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
-    technologies: [
-      "React",
-      "React Native",
-      "SCSS",
-      "Wordpress",
-      "Javascript",
-      "Typescript",
-      "PHP"
-    ],
-    links: [
-      { title: "Upstatement", url: "https://upstatement.com" },
-      { title: "Harvard Business School", url: "https://hbs.edu" }
-    ]
-  },
-  {
-    from: "2019",
-    to: "Present",
-    prevTitles: ["Senior Software Engineer", "Software Engineer"],
-    company: "Lead Engineer · Upstatement",
-    description:
-      "Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.",
-    technologies: [
-      "React",
-      "React Native",
-      "SCSS",
-      "Wordpress",
-      "Javascript",
-      "Typescript",
-      "PHP"
-    ],
-    links: [
-      { title: "Upstatement", url: "https://upstatement.com" },
-      { title: "Harvard Business School", url: "https://hbs.edu" }
-    ]
+    technologies: [],
+    links: []
   }
 ]
 
 function Experience() {
   return (
     <section className="">
-      <ol className="group/list">
+      <ol className="group/list flex flex-col gap-5">
         {experience.map((job, index) => (
-          <li key={index} className="grid sm:grid-cols-8 sm:gap-8 md:gap-2">
-            <header className="text-xs font-semibold uppercase tracking-wide sm:col-span-2">
+          <li
+            key={index}
+            className="hover:bg-background/60 group grid rounded-lg p-6 transition-all duration-300 hover:!opacity-100 group-hover/list:opacity-50 sm:grid-cols-8 sm:gap-8 md:gap-2"
+          >
+            <header className="mt-1 text-xs font-semibold uppercase tracking-wide sm:col-span-2">
               {job.from}-{job.to}
             </header>
-            <div className="sm:col-span-6">
-              <h2>{job.company}</h2>
+            <div className="flex flex-col gap-2 sm:col-span-6">
+              <div className="leading-snug">
+                <h2 className="group-hover:text-primary font-medium transition-all duration-300">
+                  {job.company}
+                </h2>
+                {job.prevTitles.length > 0 &&
+                  job.prevTitles.map((title) => (
+                    <h3
+                      className="text-muted-foreground"
+                      aria-hidden={true}
+                      key={title}
+                    >
+                      {title}
+                    </h3>
+                  ))}
+              </div>
               <p className="">{job.description}</p>
+
+              {job.links.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {job.links.map((link) => (
+                    <Button
+                      key={link.url}
+                      size="sm"
+                      variant="link"
+                      className="text-sm"
+                    >
+                      <Link2Icon className="mr-1" />
+                      <a href={link.url}>{link.title}</a>
+                    </Button>
+                  ))}
+                </div>
+              )}
+
+              {job.technologies.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {job.technologies.map((technology) => (
+                    <Badge key={technology}>{technology}</Badge>
+                  ))}
+                </div>
+              )}
             </div>
           </li>
         ))}
